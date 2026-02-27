@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cosy Place | Luxury Vacation Rental | Book Your Dream Getaway</title>
+    <meta name="description"
+        content="Experience luxury at The Cosy Place - a premium vacation rental with modern amenities, stunning views, and perfect comfort. Book directly or through Airbnb, Booking.com.">
+    <meta name="keywords"
+        content="vacation rental, Airbnb, Booking.com, luxury accommodation, holiday home, cosy place, direct booking">
+    <meta name="author" content="The Cosy Place">
+    <meta property="og:title" content="The Cosy Place | Luxury Vacation Rental">
+    <meta property="og:description"
+        content="Experience luxury at The Cosy Place - a premium vacation rental with modern amenities.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a365d",
+                        secondary: "#2d3748",
+                        accent: "#c53030",
+                        light: "#f7fafc",
+                        dark: "#1a202c"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'serif': ['Playfair Display', 'Georgia', 'serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('photos/O56A0306_113519.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .booking-card-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .amenity-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .amenity-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-light">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                        <i class="fas fa-home text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-primary font-serif">The Cosy Place</h1>
+                        <p class="text-sm text-gray-600">Luxury Vacation Rental</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home"
+                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Home</a>
+                    <a href="#about"
+                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">About</a>
+                    <a href="#amenities"
+                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Amenities</a>
+                    <a href="#gallery"
+                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Gallery</a>
+                    <a href="#booking"
+                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Book Now</a>
+                </div>
+
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-4 pb-4">
+                <a href="#home" class="block text-gray-700 hover:text-accent font-medium">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-accent font-medium">About</a>
+                <a href="#amenities" class="block text-gray-700 hover:text-accent font-medium">Amenities</a>
+                <a href="#gallery" class="block text-gray-700 hover:text-accent font-medium">Gallery</a>
+                <a href="#booking" class="block text-gray-700 hover:text-accent font-medium">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="max-w-3xl mx-auto text-center animate-fade-in">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif">Experience Luxury & Comfort</h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Your perfect getaway at The Cosy Place - where modern
+                    luxury meets homely comfort</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#booking"
+                        class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-calendar-alt mr-2"></i>Book Direct & Save
+                    </a>
+                    <a href="#platforms"
+                        class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>View on Platforms
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-serif">Welcome to The Cosy Place
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6">Nestled in a peaceful neighborhood, The Cosy Place offers the
+                        perfect blend of modern luxury and homely comfort. Our vacation rental is designed to provide
+                        you with an unforgettable experience.</p>
+                    <p class="text-lg text-gray-700 mb-8">With spacious living areas, premium amenities, and attention
+                        to every detail, we ensure your stay is nothing short of perfect. Whether you're here for
+                        business or leisure, you'll find everything you need for a comfortable stay.</p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-accent text-2xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Up to 6 Guests</h4>
+                                <p class="text-gray-600">3 bedrooms</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-bed text-accent text-2xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">3 Bedrooms</h4>
+                                <p class="text-gray-600">King & Queen beds</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-bath text-accent text-2xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">2 Bathrooms</h4>
+                                <p class="text-gray-600">Modern fixtures</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-wifi text-accent text-2xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">High-Speed WiFi</h4>
+                                <p class="text-gray-600">Free unlimited</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="photos/O56A0307_113438.jpg" alt="Living room at The Cosy Place with modern furniture"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy">
+                    <img src="photos/O56A0298_113803.jpg" alt="Bedroom with comfortable king size bed"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover mt-8" loading="lazy">
+                    <img src="photos/O56A0301_113722.jpg" alt="Modern kitchen with stainless steel appliances"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy">
+                    <img src="photos/O56A0309_113327.jpg" alt="Outdoor patio with seating area"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover mt-8" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 font-serif">Premium Amenities</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need for a comfortable and memorable
+                    stay</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-utensils text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Fully Equipped Kitchen</h3>
+                    <p class="text-gray-600">Modern appliances, cookware, and everything you need to prepare meals</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-tv text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Smart TV & Streaming</h3>
+                    <p class="text-gray-600">Large smart TV with Netflix, Disney+, and other streaming services</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-wind text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Air Conditioning</h3>
+                    <p class="text-gray-600">Central heating and cooling for year-round comfort</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-parking text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Free Parking</h3>
+                    <p class="text-gray-600">Private parking space available for 2 vehicles</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-swimming-pool text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Swimming Pool Access</h3>
+                    <p class="text-gray-600">Seasonal access to community swimming pool</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-dumbbell text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Fitness Center</h3>
+                    <p class="text-gray-600">Access to well-equipped community fitness center</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-tshirt text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Laundry Facilities</h3>
+                    <p class="text-gray-600">In-unit washer and dryer for your convenience</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4 amenity-icon">
+                        <i class="fas fa-shield-alt text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Secure Building</h3>
+                    <p class="text-gray-600">24/7 security and keyless entry system</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Platforms Section -->
+    <section id="platforms" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 font-serif">Book Your Stay</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Choose your preferred booking platform or book
+                    directly with us for the best rates</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div
+                    class="bg-white border-2 border-gray-200 rounded-xl p-8 text-center hover:border-accent transition-all duration-300 hover:shadow-xl">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-airbnb text-3xl text-[#FF5A5F]"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Airbnb</h3>
+                    <p class="text-gray-600 mb-6">Book through Airbnb for a seamless experience with their trusted
+                        platform</p>
+                    <a href="#"
+                        class="inline-block bg-[#FF5A5F] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E14E50] transition duration-300">
+                        <i class="fab fa-airbnb mr-2"></i>Book on Airbnb
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white border-2 border-gray-200 rounded-xl p-8 text-center hover:border-blue-500 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Booking.com</h3>
+                    <p class="text-gray-600 mb-6">Find us on Booking.com for competitive rates and flexible cancellation
+                    </p>
+                    <a href="#"
+                        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>Book on Booking.com
+                    </a>
+                </div>
+
+                <div class="bg-white border-2 border-accent rounded-xl p-8 text-center shadow-lg booking-card-shadow">
+                    <div
+                        class="w-20 h-20 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-home text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Direct Booking</h3>
+                    <p class="text-gray-600 mb-6">Book directly with us for the best rates and personalized service</p>
+                    <a href="#booking"
+                        class="inline-block bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300">
+                        <i class="fas fa-calendar-check mr-2"></i>Book Direct & Save 15%
+                    </a>
+                    <p class="text-sm text-gray-500 mt-4">No platform fees • Best price guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Form -->
+    <section id="booking" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 bg-primary text-white p-8 md:p-12">
+                            <h2 class="text-3xl font-bold mb-6 font-serif">Direct Booking Inquiry</h2>
+                            <p class="text-lg mb-8 opacity-90">Fill out the form to check availability and get our best
+                                direct booking rates. We typically respond within 2 hours.</p>
+
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Best Price Guarantee</h4>
+                                        <p class="opacity-90">Save up to 15% compared to platform bookings</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Flexible Cancellation</h4>
+                                        <p class="opacity-90">Free cancellation up to 7 days before check-in</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Personalized Service</h4>
+                                        <p class="opacity-90">Direct communication with property manager</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 pt-8 border-t border-white border-opacity-20">
+                                <h4 class="text-xl font-bold mb-4">Need Help?</h4>
+                                <p class="mb-2"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+                                <p><i class="fas fa-envelope mr-2"></i>bookings@cosyplace.com</p>
+                            </div>
+                        </div>
+
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <form id="bookingForm" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                                    <input type="text" id="name" name="name" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address
+                                        *</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="checkin" class="block text-gray-700 font-medium mb-2">Check-in Date
+                                            *</label>
+                                        <input type="date" id="checkin" name="checkin" required
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
+                                    </div>
+
+                                    <div>
+                                        <label for="checkout" class="block text-gray-700 font-medium mb-2">Check-out
+                                            Date *</label>
+                                        <input type="date" id="checkout" name="checkout" required
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="guests" class="block text-gray-700 font-medium mb-2">Number of Guests
+                                        *</label>
+                                    <select id="guests" name="guests" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
+                                        <option value="">Select number of guests</option>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5 Guests</option>
+                                        <option value="6">6 Guests</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Additional
+                                        Requests</label>
+                                    <textarea id="message" name="message" rows="4"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300"
+                                        placeholder="Any special requests or questions..."></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-accent text-white py-4 rounded-lg font-semibold hover:bg-red-700 transition duration-300 transform hover:-translate-y-1">
+                                    <i class="fas fa-paper-plane mr-2"></i>Send Booking Inquiry
+                                </button>
+
+                                <p class="text-sm text-gray-500 text-center">By submitting, you agree to our Terms &
+                                    Conditions and Privacy Policy</p>
+                            </form>
+
+                            <div id="formSuccess"
+                                class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-bold text-green-800">Booking Inquiry Sent!</h4>
+                                        <p class="text-green-700">We've received your inquiry and will contact you
+                                            within 2 hours with availability and pricing.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 font-serif">Photo Gallery</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Take a virtual tour of The Cosy Place</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery items -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0297_113914.jpg" alt="The Cosy Place Interior 1"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0298_113803.jpg" alt="The Cosy Place Interior 2"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0301_113722.jpg" alt="The Cosy Place Interior 3"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0305_113600.jpg" alt="The Cosy Place Interior 4"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0306_113519.jpg" alt="The Cosy Place Interior 5"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0307_113438.jpg" alt="The Cosy Place Interior 6"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0309_113327.jpg" alt="The Cosy Place Interior 7"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0310_113256.jpg" alt="The Cosy Place Interior 8"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0311_1_113216.jpg" alt="The Cosy Place Interior 9"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0312_113135.jpg" alt="The Cosy Place Interior 10"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0313_113105.jpg" alt="The Cosy Place Interior 11"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0314_113034.jpg" alt="The Cosy Place Interior 12"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0315_112953.jpg" alt="The Cosy Place Interior 13"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0317_112922.jpg" alt="The Cosy Place Interior 14"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0318_112841.jpg" alt="The Cosy Place Interior 15"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0319_112811.jpg" alt="The Cosy Place Interior 16"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0321_112730.jpg" alt="The Cosy Place Interior 17"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0325_112649.jpg" alt="The Cosy Place Interior 18"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0326_112609.jpg" alt="The Cosy Place Interior 19"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0327_112535.jpg" alt="The Cosy Place Interior 20"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0330_112506.jpg" alt="The Cosy Place Interior 21"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0333_112429.jpg" alt="The Cosy Place Interior 22"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0335_112346.jpg" alt="The Cosy Place Interior 23"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="photos/O56A0339_112115.jpg" alt="The Cosy Place Interior 24"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold">View Detail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                            <i class="fas fa-home text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-serif">The Cosy Place</h3>
+                            <p class="text-sm text-gray-400">Luxury Vacation Rental</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">Experience luxury and comfort at our premium vacation rental. Your perfect
+                        getaway awaits.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
+                        </li>
+                        <li><a href="#amenities"
+                                class="text-gray-400 hover:text-white transition duration-300">Amenities</a></li>
+                        <li><a href="#gallery"
+                                class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+                        <li><a href="#booking" class="text-gray-400 hover:text-white transition duration-300">Book
+                                Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-accent mr-3"></i>
+                            <span class="text-gray-400">123 Luxury Lane, Vacation City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-3"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-3"></i>
+                            <span class="text-gray-400">bookings@cosyplace.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
+                            <i class="fab fa-airbnb"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">Subscribe for special offers</p>
+                    <div class="mt-3 flex">
+                        <input type="email" placeholder="Your email"
+                            class="flex-grow px-4 py-2 bg-gray-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button class="bg-accent px-4 py-2 rounded-r-lg hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">&copy; 2024 The Cosy Place. All rights reserved. | <a href="#"
+                        class="hover:text-white transition duration-300">Privacy Policy</a> | <a href="#"
+                        class="hover:text-white transition duration-300">Terms & Conditions</a></p>
+                <p class="text-gray-500 text-sm mt-2">This website is for demonstration purposes only. All images are
+                    from Picsum Photos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VacationRental",
+        "name": "The Cosy Place",
+        "description": "Luxury vacation rental with modern amenities, perfect for families and groups up to 6 people.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Luxury Lane",
+            "addressLocality": "Vacation City"
+        },
+        "numberOfRooms": 3,
+        "occupancy": {
+            "@type": "QuantitativeValue",
+            "maxValue": 6
+        },
+        "amenityFeature": [
+            "AirConditioning",
+            "FreeParking",
+            "InternetAccess",
+            "SwimmingPool",
+            "FitnessCenter",
+            "LaundryFacility"
+        ],
+        "priceRange": "$$",
+        "telephone": "+1-555-123-4567",
+        "email": "bookings@cosyplace.com",
+        "url": "https://cosyplace.com"
+    }
+    </script>
+
+    <script>
+        // Define data at the beginning
+        const bookingPlatforms = [
+            {
+                "id": 1,
+                "name": "Airbnb",
+                "icon": "fab fa-airbnb",
+                "color": "#FF5A5F",
+                "url": "#",
+                "description": "Book through Airbnb for a seamless experience"
+            },
+            {
+                "id": 2,
+                "name": "Booking.com",
+                "icon": "fas fa-globe",
+                "color": "#003580",
+                "url": "#",
+                "description": "Find us on Booking.com for competitive rates"
+            },
+            {
+                "id": 3,
+                "name": "Direct Booking",
+                "icon": "fas fa-home",
+                "color": "#c53030",
+                "url": "#booking",
+                "description": "Book directly for the best rates"
+            }
+        ];
+
+        const amenities = [
+            { "id": 1, "name": "Fully Equipped Kitchen", "icon": "fas fa-utensils" },
+            { "id": 2, "name": "Smart TV & Streaming", "icon": "fas fa-tv" },
+            { "id": 3, "name": "Air Conditioning", "icon": "fas fa-wind" },
+            { "id": 4, "name": "Free Parking", "icon": "fas fa-parking" },
+            { "id": 5, "name": "Swimming Pool Access", "icon": "fas fa-swimming-pool" },
+            { "id": 6, "name": "Fitness Center", "icon": "fas fa-dumbbell" },
+            { "id": 7, "name": "Laundry Facilities", "icon": "fas fa-tshirt" },
+            { "id": 8, "name": "Secure Building", "icon": "fas fa-shield-alt" }
+        ];
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            this.innerHTML = menu.classList.contains('hidden') ?
+                '<i class="fas fa-bars text-2xl"></i>' :
+                '<i class="fas fa-times text-2xl"></i>';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const menuBtn = document.getElementById('mobileMenuBtn');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuBtn.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+                    }
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                checkin: document.getElementById('checkin').value,
+                checkout: document.getElementById('checkout').value,
+                guests: document.getElementById('guests').value,
+                message: document.getElementById('message').value
+            };
+
+            // Validate required fields
+            if (!formData.name || !formData.email || !formData.checkin || !formData.checkout || !formData.guests) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Validate dates
+            const checkinDate = new Date(formData.checkin);
+            const checkoutDate = new Date(formData.checkout);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (checkinDate < today) {
+                alert('Check-in date cannot be in the past');
+                return;
+            }
+
+            if (checkoutDate <= checkinDate) {
+                alert('Check-out date must be after check-in date');
+                return;
+            }
+
+            // In a real application, you would send this data to your server
+            // For demo purposes, we'll just show a success message
+            console.log('Booking inquiry submitted:', formData);
+
+            // Show success message
+            document.getElementById('formSuccess').classList.remove('hidden');
+
+            // Reset form
+            this.reset();
+
+            // Scroll to success message
+            document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Hide success message after 10 seconds
+            setTimeout(() => {
+                document.getElementById('formSuccess').classList.add('hidden');
+            }, 10000);
+        });
+
+        // Set minimum date for check-in to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').min = today;
+
+        // Update check-out min date when check-in changes
+        document.getElementById('checkin').addEventListener('change', function () {
+            const checkinDate = this.value;
+            document.getElementById('checkout').min = checkinDate;
+
+            // If current checkout date is before new checkin date, clear it
+            if (document.getElementById('checkout').value &&
+                document.getElementById('checkout').value <= checkinDate) {
+                document.getElementById('checkout').value = '';
+            }
+        });
+
+        // Initialize check-out min date
+        document.getElementById('checkout').min = today;
+
+        // Add hover effect to booking platform cards
+        document.querySelectorAll('#platforms .bg-white').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-5px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add scroll animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
