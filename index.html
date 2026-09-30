@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Cosy Place | Luxury Vacation Rental | Book Your Dream Getaway</title>
     <meta name="description"
-        content="Experience luxury at The Cosy Place - a premium vacation rental with modern amenities, stunning views, and perfect comfort. Book directly or through Airbnb, Booking.com.">
+        content="Experience luxury at The Cosy Place - a premium vacation rental with modern amenities, stunning views, and perfect comfort. Book directly or through Airbnb.">
     <meta name="keywords"
-        content="vacation rental, Airbnb, Booking.com, luxury accommodation, holiday home, cosy place, direct booking">
+        content="vacation rental, Airbnb, luxury accommodation, holiday home, cosy place, direct booking">
     <meta name="author" content="The Cosy Place">
     <meta property="og:title" content="The Cosy Place | Luxury Vacation Rental">
     <meta property="og:description"
@@ -397,7 +397,7 @@
                     directly with us for the best rates</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                 <div
                     class="bg-white border-2 border-gray-200 rounded-xl p-8 text-center hover:border-accent transition-all duration-300 hover:shadow-xl">
                     <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -406,23 +406,9 @@
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Airbnb</h3>
                     <p class="text-gray-600 mb-6">Book through Airbnb for a seamless experience with their trusted
                         platform</p>
-                    <a href="#"
+                    <a href="https://www.airbnb.co.uk/rooms/1099929384131586231" target="_blank" rel="noopener noreferrer"
                         class="inline-block bg-[#FF5A5F] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E14E50] transition duration-300">
                         <i class="fab fa-airbnb mr-2"></i>Book on Airbnb
-                    </a>
-                </div>
-
-                <div
-                    class="bg-white border-2 border-gray-200 rounded-xl p-8 text-center hover:border-blue-500 transition-all duration-300 hover:shadow-xl">
-                    <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-globe text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Booking.com</h3>
-                    <p class="text-gray-600 mb-6">Find us on Booking.com for competitive rates and flexible cancellation
-                    </p>
-                    <a href="#"
-                        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
-                        <i class="fas fa-external-link-alt mr-2"></i>Book on Booking.com
                     </a>
                 </div>
 
@@ -482,13 +468,19 @@
 
                             <div class="mt-12 pt-8 border-t border-white border-opacity-20">
                                 <h4 class="text-xl font-bold mb-4">Need Help?</h4>
-                                <p class="mb-2"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
-                                <p><i class="fas fa-envelope mr-2"></i>bookings@cosyplace.com</p>
+                                <p class="mb-2"><i class="fas fa-phone mr-2"></i><a href="tel:+27646662761" class="hover:underline">+27 64 666 2761</a></p>
+                                <p class="mb-2"><i class="fab fa-whatsapp mr-2"></i><a href="https://wa.me/27646662761?text=Hi%20The%20Cosy%20Place%2C%20I'd%20like%20to%20ask%20about%20availability." target="_blank" rel="noopener noreferrer" class="hover:underline">Chat on WhatsApp</a></p>
+                                <p><i class="fas fa-envelope mr-2"></i><a href="mailto:tinashejsibanda@gmail.com" class="hover:underline">tinashejsibanda@gmail.com</a></p>
                             </div>
                         </div>
 
                         <div class="md:w-1/2 p-8 md:p-12">
-                            <form id="bookingForm" class="space-y-6">
+                            <form id="bookingForm" action="https://formspree.io/f/xrpbjvar" method="POST"
+                                class="space-y-6">
+                                <input type="hidden" name="_subject" value="New Direct Booking Inquiry — The Cosy Place">
+                                <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off"
+                                    aria-hidden="true">
+
                                 <div>
                                     <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
                                     <input type="text" id="name" name="name" required
@@ -545,9 +537,10 @@
                                         placeholder="Any special requests or questions..."></textarea>
                                 </div>
 
-                                <button type="submit"
-                                    class="w-full bg-accent text-white py-4 rounded-lg font-semibold hover:bg-red-700 transition duration-300 transform hover:-translate-y-1">
-                                    <i class="fas fa-paper-plane mr-2"></i>Send Booking Inquiry
+                                <button type="submit" id="bookingSubmitBtn"
+                                    class="w-full bg-accent text-white py-4 rounded-lg font-semibold hover:bg-red-700 transition duration-300 transform hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none">
+                                    <i class="fas fa-paper-plane mr-2"></i><span id="bookingSubmitLabel">Send Booking
+                                        Inquiry</span>
                                 </button>
 
                                 <p class="text-sm text-gray-500 text-center">By submitting, you agree to our Terms &
@@ -562,6 +555,18 @@
                                         <h4 class="font-bold text-green-800">Booking Inquiry Sent!</h4>
                                         <p class="text-green-700">We've received your inquiry and will contact you
                                             within 2 hours with availability and pricing.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="formError"
+                                class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-exclamation-circle text-red-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-800">Something went wrong</h4>
+                                        <p id="formErrorMessage" class="text-red-700">Please try again or email us
+                                            directly.</p>
                                     </div>
                                 </div>
                             </div>
@@ -816,47 +821,33 @@
                     <h4 class="text-lg font-bold mb-6">Contact Info</h4>
                     <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-accent mr-3"></i>
-                            <span class="text-gray-400">123 Luxury Lane, Vacation City</span>
+                            <i class="fas fa-phone text-accent mr-3"></i>
+                            <a href="tel:+27646662761" class="text-gray-400 hover:text-white transition-colors">+27 64 666 2761</a>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone text-accent mr-3"></i>
-                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                            <i class="fab fa-whatsapp text-accent mr-3"></i>
+                            <a href="https://wa.me/27646662761?text=Hi%20The%20Cosy%20Place%2C%20I'd%20like%20to%20ask%20about%20availability." target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Chat on WhatsApp</a>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope text-accent mr-3"></i>
-                            <span class="text-gray-400">bookings@cosyplace.com</span>
+                            <a href="mailto:tinashejsibanda@gmail.com" class="text-gray-400 hover:text-white transition-colors">tinashejsibanda@gmail.com</a>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-6">Connect With Us</h4>
-                    <div class="flex space-x-4 mb-6">
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
+                    <h4 class="text-lg font-bold mb-6">Quick Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/27646662761?text=Hi%20The%20Cosy%20Place%2C%20I'd%20like%20to%20ask%20about%20availability." target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300"
+                            aria-label="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300">
+                        <a href="https://www.airbnb.co.uk/rooms/1099929384131586231" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition duration-300"
+                            aria-label="View on Airbnb">
                             <i class="fab fa-airbnb"></i>
                         </a>
-                    </div>
-                    <p class="text-gray-400 text-sm">Subscribe for special offers</p>
-                    <div class="mt-3 flex">
-                        <input type="email" placeholder="Your email"
-                            class="flex-grow px-4 py-2 bg-gray-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-accent">
-                        <button class="bg-accent px-4 py-2 rounded-r-lg hover:bg-red-700 transition duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -865,8 +856,9 @@
                 <p class="text-gray-400">&copy; 2024 The Cosy Place. All rights reserved. | <a href="#"
                         class="hover:text-white transition duration-300">Privacy Policy</a> | <a href="#"
                         class="hover:text-white transition duration-300">Terms & Conditions</a></p>
-                <p class="text-gray-500 text-sm mt-2">This website is for demonstration purposes only. All images are
-                    from Picsum Photos.</p>
+                <p class="text-gray-500 text-sm mt-2">Website developed by <span class="text-gray-400">AVATECH</span> ·
+                    <a href="mailto:avatechinfosystems@gmail.com"
+                        class="hover:text-white transition duration-300">avatechinfosystems@gmail.com</a></p>
             </div>
         </div>
     </footer>
@@ -878,11 +870,6 @@
         "@type": "VacationRental",
         "name": "The Cosy Place",
         "description": "Luxury vacation rental with modern amenities, perfect for families and groups up to 6 people.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Luxury Lane",
-            "addressLocality": "Vacation City"
-        },
         "numberOfRooms": 3,
         "occupancy": {
             "@type": "QuantitativeValue",
@@ -897,8 +884,8 @@
             "LaundryFacility"
         ],
         "priceRange": "$$",
-        "telephone": "+1-555-123-4567",
-        "email": "bookings@cosyplace.com",
+        "telephone": "+27-64-666-2761",
+        "email": "tinashejsibanda@gmail.com",
         "url": "https://cosyplace.com"
     }
     </script>
@@ -911,19 +898,10 @@
                 "name": "Airbnb",
                 "icon": "fab fa-airbnb",
                 "color": "#FF5A5F",
-                "url": "#",
-                "description": "Book through Airbnb for a seamless experience"
+                "url": "https://www.airbnb.co.uk/rooms/1099929384131586231",
             },
             {
                 "id": 2,
-                "name": "Booking.com",
-                "icon": "fas fa-globe",
-                "color": "#003580",
-                "url": "#",
-                "description": "Find us on Booking.com for competitive rates"
-            },
-            {
-                "id": 3,
                 "name": "Direct Booking",
                 "icon": "fas fa-home",
                 "color": "#c53030",
@@ -1036,30 +1014,33 @@
             });
         }, { passive: true });
 
-        // Booking form submission
-        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+        // Booking form submission → Formspree (AJAX)
+        const bookingForm = document.getElementById('bookingForm');
+        const bookingSubmitBtn = document.getElementById('bookingSubmitBtn');
+        const bookingSubmitLabel = document.getElementById('bookingSubmitLabel');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+        const formErrorMessage = document.getElementById('formErrorMessage');
+
+        bookingForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                checkin: document.getElementById('checkin').value,
-                checkout: document.getElementById('checkout').value,
-                guests: document.getElementById('guests').value,
-                message: document.getElementById('message').value
-            };
+            formSuccess.classList.add('hidden');
+            formError.classList.add('hidden');
 
-            // Validate required fields
-            if (!formData.name || !formData.email || !formData.checkin || !formData.checkout || !formData.guests) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const guests = document.getElementById('guests').value;
+
+            if (!name || !email || !checkin || !checkout || !guests) {
                 alert('Please fill in all required fields');
                 return;
             }
 
-            // Validate dates
-            const checkinDate = new Date(formData.checkin);
-            const checkoutDate = new Date(formData.checkout);
+            const checkinDate = new Date(checkin);
+            const checkoutDate = new Date(checkout);
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
@@ -1073,23 +1054,38 @@
                 return;
             }
 
-            // In a real application, you would send this data to your server
-            // For demo purposes, we'll just show a success message
-            console.log('Booking inquiry submitted:', formData);
+            bookingSubmitBtn.disabled = true;
+            bookingSubmitLabel.textContent = 'Sending...';
 
-            // Show success message
-            document.getElementById('formSuccess').classList.remove('hidden');
+            try {
+                const response = await fetch(bookingForm.action, {
+                    method: 'POST',
+                    body: new FormData(bookingForm),
+                    headers: { Accept: 'application/json' }
+                });
 
-            // Reset form
-            this.reset();
-
-            // Scroll to success message
-            document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Hide success message after 10 seconds
-            setTimeout(() => {
-                document.getElementById('formSuccess').classList.add('hidden');
-            }, 10000);
+                if (response.ok) {
+                    bookingForm.reset();
+                    formSuccess.classList.remove('hidden');
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    setTimeout(() => formSuccess.classList.add('hidden'), 10000);
+                } else {
+                    const data = await response.json().catch(() => ({}));
+                    const message = data.errors
+                        ? data.errors.map((err) => err.message).join(' ')
+                        : 'Please try again or email us directly.';
+                    formErrorMessage.textContent = message;
+                    formError.classList.remove('hidden');
+                    formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            } catch (error) {
+                formErrorMessage.textContent = 'Network error. Please check your connection and try again.';
+                formError.classList.remove('hidden');
+                formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                bookingSubmitBtn.disabled = false;
+                bookingSubmitLabel.textContent = 'Send Booking Inquiry';
+            }
         });
 
         // Set minimum date for check-in to today
@@ -1122,31 +1118,31 @@
             });
         });
 
-        // Add scroll animation for sections
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Reveal sections as they enter the viewport.
+        // Use threshold 0: a tall gallery can never reach 10% visible on a phone,
+        // which previously left #gallery stuck at opacity 0.
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    if (entry.target.id !== 'gallery') {
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                }
+                if (!entry.isIntersecting) return;
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             });
-        }, observerOptions);
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px -40px 0px'
+        });
 
-        // Observe sections for animation. The gallery stays free of transforms
-        // so its room jump bar can stick while you scroll through the photos.
         document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            if (section.id !== 'gallery') {
-                section.style.transform = 'translateY(20px)';
+            // Keep the gallery visible immediately — sticky room jumps and photos
+            // must not depend on intersection timing.
+            if (section.id === 'gallery') {
+                section.style.opacity = '1';
+                return;
             }
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(section);
         });
     </script>
