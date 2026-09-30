@@ -12,6 +12,10 @@
         content="self-catering cottage Marlborough Harare, self catering near Westgate, guest house Harare, accommodation in Marlborough">
     <meta name="author" content="The Cosy Place">
     <link rel="canonical" href="https://thecosyplace.co.zw/">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <meta property="og:title" content="The Cosy Place | Self-Catering Cottage in Marlborough, Harare">
     <meta property="og:description"
         content="Private self-catering cottage in Marlborough, Harare. Whole cottage from $65/night or one bedroom from $45/night.">
@@ -79,13 +83,15 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: calc(100vh - 5.25rem);
-            min-height: calc(100svh - 5.25rem);
+            min-height: calc(100vh - 5rem);
+            min-height: calc(100svh - 5rem);
         }
 
         @media (min-width: 768px) {
             .hero-gradient {
                 background-attachment: fixed;
+                min-height: calc(100vh - 6rem);
+                min-height: calc(100svh - 6rem);
             }
         }
 
@@ -138,11 +144,17 @@
 
         .gallery-jump {
             position: sticky;
-            top: 5.25rem;
+            top: 5rem;
             z-index: 40;
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid #e2e8f0;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-jump {
+                top: 6rem;
+            }
         }
 
         .room-jump-track {
@@ -389,19 +401,20 @@
 <body class="font-sans text-gray-800 bg-light">
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-4 py-4">
+        <nav class="container mx-auto px-4 py-2">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-                        <i class="fas fa-home text-white text-xl"></i>
+                <a href="#home" class="flex items-center shrink-0 gap-2 sm:gap-3 min-w-0">
+                    <img src="assets/logo-thecosyplace.png" alt="" class="h-14 sm:h-16 md:h-20 w-auto" width="720" height="389">
+                    <div class="min-w-0">
+                        <p class="text-xl sm:text-2xl font-bold text-primary font-serif leading-tight flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-accent" aria-hidden="true"></i>
+                            <span>The Cosy Place</span>
+                        </p>
+                        <p class="text-xs sm:text-sm text-gray-600">Marlborough, Harare</p>
                     </div>
-                    <div>
-                        <p class="text-2xl font-bold text-primary font-serif">The Cosy Place</p>
-                        <p class="text-sm text-gray-600">Marlborough, Harare</p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-4 xl:space-x-8">
                     <a href="#home"
                         class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Home</a>
                     <a href="#about"
@@ -418,13 +431,13 @@
                         class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Book Now</a>
                 </div>
 
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-4 pb-4">
+            <div id="mobileMenu" class="hidden lg:hidden mt-4 space-y-4 pb-4">
                 <a href="#home" class="block text-gray-700 hover:text-accent font-medium">Home</a>
                 <a href="#about" class="block text-gray-700 hover:text-accent font-medium">About</a>
                 <a href="blog/accommodation-in-marlborough-harare/" class="block text-gray-700 hover:text-accent font-medium">Location</a>
@@ -1060,15 +1073,10 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-                            <i class="fas fa-home text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold font-serif">The Cosy Place</h3>
-                            <p class="text-sm text-gray-400">Marlborough, Harare</p>
-                        </div>
-                    </div>
+                    <a href="#home" class="inline-block mb-4">
+                        <img src="assets/logo-thecosyplace.png" alt="The Cosy Place" class="h-24 w-auto bg-white rounded-xl" width="720" height="389">
+                    </a>
+                    <p class="text-sm text-gray-400 mb-4">Marlborough, Harare</p>
                     <p class="text-gray-400">A private two-bedroom self-catering cottage in Marlborough, Harare, with its own
                         entrance, porch, and lawn.</p>
                 </div>
