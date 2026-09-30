@@ -26,7 +26,15 @@
     <meta name="geo.region" content="ZW-HA">
     <meta name="geo.placename" content="Marlborough, Harare">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/photos/O56A0306_113519.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -62,8 +70,6 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
         html {
             scroll-behavior: smooth;
         }
@@ -72,9 +78,15 @@
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/photos/O56A0306_113519.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-repeat: no-repeat;
             min-height: calc(100vh - 5.25rem);
             min-height: calc(100svh - 5.25rem);
+        }
+
+        @media (min-width: 768px) {
+            .hero-gradient {
+                background-attachment: fixed;
+            }
         }
 
         .scroll-cue {
@@ -180,6 +192,196 @@
 
         .amenity-icon:hover {
             transform: scale(1.1);
+        }
+
+        #gallery figure[data-lightbox] {
+            cursor: zoom-in;
+        }
+
+        #gallery figure[data-lightbox] img {
+            display: block;
+        }
+
+        .lightbox-zoom {
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.6rem;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 9999px;
+            border: none;
+            color: #1a365d;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+            font-size: 0.7rem;
+            opacity: 0.95;
+            transition: transform 0.2s ease, background 0.2s ease;
+            pointer-events: none;
+        }
+
+        #gallery figure[data-lightbox]:hover .lightbox-zoom,
+        #gallery figure[data-lightbox]:focus-within .lightbox-zoom {
+            transform: scale(1.08);
+            background: #fff;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.88);
+        }
+
+        .lightbox.is-open {
+            display: flex;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: min(96vw, 1200px);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .lightbox-inner img {
+            max-width: 100%;
+            max-height: calc(90vh - 3rem);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            transform: scale(1);
+            transition: transform 0.25s ease;
+        }
+
+        .lightbox.is-open .lightbox-inner img {
+            transform: scale(1.02);
+        }
+
+        .lightbox-caption {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            text-align: center;
+            max-width: 40rem;
+        }
+
+        .lightbox-close,
+        .lightbox-nav {
+            position: absolute;
+            border: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(4px);
+            border-radius: 9999px;
+            width: 2.75rem;
+            height: 2.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-nav:hover,
+        .lightbox-close:focus-visible,
+        .lightbox-nav:focus-visible {
+            background: rgba(255, 255, 255, 0.28);
+            outline: none;
+        }
+
+        .lightbox-close {
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+        }
+
+        .lightbox-nav.prev {
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-nav.next {
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 640px) {
+            .lightbox-nav.prev { left: 0.25rem; }
+            .lightbox-nav.next { right: 0.25rem; }
+        }
+
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        .flatpickr-day.selected,
+        .flatpickr-day.startRange,
+        .flatpickr-day.endRange,
+        .flatpickr-day.selected.inRange,
+        .flatpickr-day.startRange.inRange,
+        .flatpickr-day.endRange.inRange,
+        .flatpickr-day.selected:focus,
+        .flatpickr-day.startRange:focus,
+        .flatpickr-day.endRange:focus,
+        .flatpickr-day.selected:hover,
+        .flatpickr-day.startRange:hover,
+        .flatpickr-day.endRange:hover,
+        .flatpickr-day.selected.prevMonthDay,
+        .flatpickr-day.startRange.prevMonthDay,
+        .flatpickr-day.endRange.prevMonthDay,
+        .flatpickr-day.selected.nextMonthDay,
+        .flatpickr-day.startRange.nextMonthDay,
+        .flatpickr-day.endRange.nextMonthDay {
+            background: #c53030;
+            border-color: #c53030;
+        }
+
+        .flatpickr-day.inRange,
+        .flatpickr-day.prevMonthDay.inRange,
+        .flatpickr-day.nextMonthDay.inRange,
+        .flatpickr-day.today.inRange,
+        .flatpickr-day:hover,
+        .flatpickr-day.prevMonthDay:hover,
+        .flatpickr-day.nextMonthDay:hover,
+        .flatpickr-day:focus,
+        .flatpickr-day.prevMonthDay:focus,
+        .flatpickr-day.nextMonthDay:focus {
+            background: rgba(197, 48, 48, 0.12);
+            border-color: transparent;
+        }
+
+        .flatpickr-day.today {
+            border-color: #c53030;
+        }
+
+        .flatpickr-months .flatpickr-month,
+        .flatpickr-current-month .flatpickr-monthDropdown-months,
+        .flatpickr-weekdays,
+        span.flatpickr-weekday {
+            background: #1a365d;
+            color: #fff;
+            fill: #fff;
+        }
+
+        .flatpickr-months .flatpickr-prev-month,
+        .flatpickr-months .flatpickr-next-month {
+            color: #fff;
+            fill: #fff;
         }
     </style>
 </head>
@@ -579,20 +781,15 @@
                                     </select>
                                 </div>
 
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label for="checkin" class="block text-gray-700 font-medium mb-2">Check-in Date
-                                            *</label>
-                                        <input type="date" id="checkin" name="checkin" required
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
-                                    </div>
-
-                                    <div>
-                                        <label for="checkout" class="block text-gray-700 font-medium mb-2">Check-out
-                                            Date *</label>
-                                        <input type="date" id="checkout" name="checkout" required
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
-                                    </div>
+                                <div>
+                                    <label for="stay_dates" class="block text-gray-700 font-medium mb-2">Stay dates *</label>
+                                    <input type="text" id="stay_dates" required readonly
+                                        placeholder="Select check-in and check-out"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300 cursor-pointer bg-white"
+                                        aria-describedby="stay_dates_help">
+                                    <input type="hidden" id="checkin" name="checkin" required>
+                                    <input type="hidden" id="checkout" name="checkout" required>
+                                    <p id="stay_dates_help" class="text-sm text-gray-500 mt-2">Tap to open the calendar and choose a date range.</p>
                                 </div>
 
                                 <div>
@@ -941,6 +1138,22 @@
         </div>
     </footer>
 
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo viewer">
+        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close photo">
+            <i class="fas fa-times text-lg" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous photo">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="lightbox-inner">
+            <img id="lightboxImage" src="" alt="">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+        <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next photo">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
+
     <!-- Schema Markup for SEO -->
     <script type="application/ld+json">
     {
@@ -987,6 +1200,7 @@
     }
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
     <script>
         // Define data at the beginning
         const bookingPlatforms = [
@@ -1119,6 +1333,30 @@
         const formError = document.getElementById('formError');
         const formErrorMessage = document.getElementById('formErrorMessage');
 
+        // Stay dates — single calendar range picker
+        const stayDatesInput = document.getElementById('stay_dates');
+        const checkinInput = document.getElementById('checkin');
+        const checkoutInput = document.getElementById('checkout');
+
+        const stayDatePicker = flatpickr(stayDatesInput, {
+            mode: 'range',
+            dateFormat: 'Y-m-d',
+            altInput: true,
+            altFormat: 'j M Y',
+            minDate: 'today',
+            showMonths: 1,
+            conjunction: ' to ',
+            onChange: function (selectedDates) {
+                if (selectedDates.length === 2) {
+                    checkinInput.value = flatpickr.formatDate(selectedDates[0], 'Y-m-d');
+                    checkoutInput.value = flatpickr.formatDate(selectedDates[1], 'Y-m-d');
+                } else {
+                    checkinInput.value = '';
+                    checkoutInput.value = '';
+                }
+            }
+        });
+
         bookingForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -1128,24 +1366,17 @@
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const stayType = document.getElementById('stay_type').value;
-            const checkin = document.getElementById('checkin').value;
-            const checkout = document.getElementById('checkout').value;
+            const checkin = checkinInput.value;
+            const checkout = checkoutInput.value;
             const guests = document.getElementById('guests').value;
 
             if (!name || !email || !stayType || !checkin || !checkout || !guests) {
-                alert('Please fill in all required fields');
+                alert('Please fill in all required fields, including both stay dates');
                 return;
             }
 
             const checkinDate = new Date(checkin);
             const checkoutDate = new Date(checkout);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            if (checkinDate < today) {
-                alert('Check-in date cannot be in the past');
-                return;
-            }
 
             if (checkoutDate <= checkinDate) {
                 alert('Check-out date must be after check-in date');
@@ -1164,6 +1395,9 @@
 
                 if (response.ok) {
                     bookingForm.reset();
+                    stayDatePicker.clear();
+                    checkinInput.value = '';
+                    checkoutInput.value = '';
                     guestsSelect.innerHTML = '<option value="">Select stay type first</option>';
                     formSuccess.classList.remove('hidden');
                     formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1215,25 +1449,6 @@
             }
         });
 
-        // Set minimum date for check-in to today
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('checkin').min = today;
-
-        // Update check-out min date when check-in changes
-        document.getElementById('checkin').addEventListener('change', function () {
-            const checkinDate = this.value;
-            document.getElementById('checkout').min = checkinDate;
-
-            // If current checkout date is before new checkin date, clear it
-            if (document.getElementById('checkout').value &&
-                document.getElementById('checkout').value <= checkinDate) {
-                document.getElementById('checkout').value = '';
-            }
-        });
-
-        // Initialize check-out min date
-        document.getElementById('checkout').min = today;
-
         // Add hover effect to booking platform cards
         document.querySelectorAll('#platforms .bg-white').forEach(card => {
             card.addEventListener('mouseenter', function () {
@@ -1272,6 +1487,86 @@
             section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(section);
         });
+
+        // Gallery lightbox
+        (function initLightbox() {
+            const gallery = document.getElementById('gallery');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.getElementById('lightboxClose');
+            const prevBtn = document.getElementById('lightboxPrev');
+            const nextBtn = document.getElementById('lightboxNext');
+            if (!gallery || !lightbox || !lightboxImage) return;
+
+            const figures = Array.from(gallery.querySelectorAll('figure')).filter((figure) => {
+                return !!figure.querySelector('img');
+            });
+
+            let currentIndex = 0;
+
+            figures.forEach((figure, index) => {
+                const img = figure.querySelector('img');
+                if (!img) return;
+                figure.setAttribute('data-lightbox', String(index));
+                figure.setAttribute('tabindex', '0');
+                figure.setAttribute('role', 'button');
+                figure.setAttribute('aria-label', 'View larger: ' + (img.alt || 'photo'));
+
+                const zoom = document.createElement('span');
+                zoom.className = 'lightbox-zoom';
+                zoom.setAttribute('aria-hidden', 'true');
+                zoom.innerHTML = '<i class="fas fa-search-plus"></i>';
+                figure.appendChild(zoom);
+
+                const open = () => openAt(index);
+                figure.addEventListener('click', open);
+                figure.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        open();
+                    }
+                });
+            });
+
+            function openAt(index) {
+                currentIndex = (index + figures.length) % figures.length;
+                const img = figures[currentIndex].querySelector('img');
+                lightboxImage.src = img.currentSrc || img.src;
+                lightboxImage.alt = img.alt || '';
+                lightboxCaption.textContent = img.alt || '';
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('lightbox-open');
+                closeBtn.focus();
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('lightbox-open');
+                lightboxImage.removeAttribute('src');
+            }
+
+            function showNext(step) {
+                openAt(currentIndex + step);
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', () => showNext(-1));
+            nextBtn.addEventListener('click', () => showNext(1));
+
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') showNext(-1);
+                if (event.key === 'ArrowRight') showNext(1);
+            });
+        })();
     </script>
 </body>
 
