@@ -1170,6 +1170,8 @@
             {
                 "@type": "VacationRental",
                 "@id": "https://thecosyplace.co.zw/#cottage",
+                "identifier": "thecosyplace-cottage",
+                "additionalType": "Cottage",
                 "name": "The Cosy Place",
                 "description": "A private self-catering cottage in Marlborough, Harare. Book the whole cottage (up to 4 guests) from $65 per night, or one bedroom (up to 2 guests) from $45 per night. Kitchen, solar backup, borehole water, and parking.",
                 "url": "https://thecosyplace.co.zw/",
@@ -1177,6 +1179,23 @@
                 "email": "tinashejsibanda@gmail.com",
                 "priceRange": "$45-$70",
                 "currenciesAccepted": "USD",
+                "image": [
+                    "https://thecosyplace.co.zw/assets/photos/O56A0326_112609.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0314_113034.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0321_112730.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0325_112649.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0297_113914.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0301_113722.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0306_113519.jpg",
+                    "https://thecosyplace.co.zw/assets/photos/O56A0339_112115.jpg"
+                ],
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -17.76160,
+                    "longitude": 31.01020
+                },
+                "latitude": -17.76160,
+                "longitude": 31.01020,
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Marlborough",
@@ -1185,24 +1204,39 @@
                 },
                 "containsPlace": {
                     "@type": "Accommodation",
+                    "additionalType": "EntirePlace",
                     "occupancy": {
                         "@type": "QuantitativeValue",
-                        "maxValue": 4,
-                        "unitText": "guests"
+                        "value": 4
                     },
+                    "bed": [
+                        {
+                            "@type": "BedDetails",
+                            "numberOfBeds": 1,
+                            "typeOfBed": "King"
+                        },
+                        {
+                            "@type": "BedDetails",
+                            "numberOfBeds": 1,
+                            "typeOfBed": "Queen"
+                        }
+                    ],
                     "numberOfBedrooms": 2,
-                    "numberOfBathroomsTotal": 2
-                },
-                "amenityFeature": [
-                    { "@type": "LocationFeatureSpecification", "name": "Kitchen", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "Washer and dryer", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "Solar power backup", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "Solar geyser", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "Borehole water", "value": true },
-                    { "@type": "LocationFeatureSpecification", "name": "DSTV", "value": true }
-                ]
+                    "numberOfBathroomsTotal": 2,
+                    "amenityFeature": [
+                        { "@type": "LocationFeatureSpecification", "name": "kitchen", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "ovenStove", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "microwave", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "wifi", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "internetType", "value": "Free" },
+                        { "@type": "LocationFeatureSpecification", "name": "parkingType", "value": "Free" },
+                        { "@type": "LocationFeatureSpecification", "name": "washerDryer", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "tv", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "patio", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "selfCheckinCheckout", "value": true },
+                        { "@type": "LocationFeatureSpecification", "name": "instantBookable", "value": false }
+                    ]
+                }
             }
         ]
     }
