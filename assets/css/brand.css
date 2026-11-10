@@ -1,0 +1,9 @@
+:root {
+  --color-primary: #1f4d3a;
+  --color-secondary: #3d4a3f;
+  --color-accent: #5b7f6a;
+  --color-light: #fafaf7;
+  --color-dark: #1c241e;
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+}
