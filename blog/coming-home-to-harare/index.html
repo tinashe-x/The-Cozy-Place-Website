@@ -187,7 +187,7 @@
                     <ul class="space-y-3">
                         <li class="flex items-center">
                             <i class="fas fa-phone text-accent mr-3"></i>
-                            <a href="tel:+27646662761" class="text-gray-400 hover:text-white transition-colors">+27 64 666 2761</a>
+                            <span><a href="tel:+27646662761" class="text-gray-400 hover:text-white transition-colors">+27 64 666 2761</a><span class="block text-xs text-gray-500">WhatsApp · South Africa-based manager</span></span>
                         </li>
                         <li class="flex items-center">
                             <i class="fab fa-whatsapp text-accent mr-3"></i>
@@ -218,8 +218,8 @@
             </div>
 
             <div class="pt-8 border-t border-gray-800 text-center">
-                <p class="text-gray-400">&copy; 2024 The Cosy Place. All rights reserved. | <a href="#"
-                        class="hover:text-white transition duration-300">Privacy Policy</a> | <a href="#"
+                <p class="text-gray-400">&copy; <span id="year">2026</span> The Cosy Place. All rights reserved. | <a href="../../privacy/"
+                        class="hover:text-white transition duration-300">Privacy Policy</a> | <a href="../../terms/"
                         class="hover:text-white transition duration-300">Terms & Conditions</a></p>
                 <p class="text-gray-500 text-sm mt-2">Website developed by <span class="text-gray-400">AVATECH</span> ·
                     <a href="mailto:avatechinfosystems@gmail.com"
@@ -338,6 +338,7 @@
             this.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         });
     </script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

@@ -477,6 +477,35 @@
         </a>
     </section>
 
+    <!-- Why stay strip -->
+    <section id="why-stay" class="py-12 bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-center font-serif">Why stay with us?</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+                <div>
+                    <i class="fas fa-bolt text-accent text-2xl mb-3" aria-hidden="true"></i>
+                    <h3 class="font-semibold text-gray-800">Backup power</h3>
+                    <p class="text-sm text-gray-600 mt-1">Solar inverter for lights</p>
+                </div>
+                <div>
+                    <i class="fas fa-tint text-accent text-2xl mb-3" aria-hidden="true"></i>
+                    <h3 class="font-semibold text-gray-800">Borehole water</h3>
+                    <p class="text-sm text-gray-600 mt-1">Private borehole on site</p>
+                </div>
+                <div>
+                    <i class="fas fa-wifi text-accent text-2xl mb-3" aria-hidden="true"></i>
+                    <h3 class="font-semibold text-gray-800">Fibre Wi-Fi</h3>
+                    <p class="text-sm text-gray-600 mt-1">Uncapped high-speed</p>
+                </div>
+                <div>
+                    <i class="fas fa-parking text-accent text-2xl mb-3" aria-hidden="true"></i>
+                    <h3 class="font-semibold text-gray-800">Secure parking</h3>
+                    <p class="text-sm text-gray-600 mt-1">Space for two cars</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -716,6 +745,56 @@
                         <i class="fas fa-calendar-check mr-2"></i>Book Direct
                     </a>
                     <p class="text-sm text-gray-500 mt-4">From $50 / night · Best for one-bedroom stays</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why guests choose us -->
+    <section id="why-guests" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 font-serif">Why guests choose The Cosy Place</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">A private cottage for families visiting Harare, Zimbabweans coming home, business travellers, couples, and guests who need a longer stay.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto mb-12">
+                <div>
+                    <h3 class="font-bold text-primary mb-2">Check-in &amp; check-out</h3>
+                    <p class="text-gray-600">Check-in from 14:00 · Check-out by 10:00. Self check-in with clear arrival instructions after your booking is confirmed.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-2">Cancellation</h3>
+                    <p class="text-gray-600">Free cancellation up to 7 days before check-in on direct bookings.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-2">Payment</h3>
+                    <p class="text-gray-600">Rates in USD. Pay by bank transfer or an agreed method after we confirm availability — no card charge on enquiry.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-2">Security</h3>
+                    <p class="text-gray-600">Secure parking for two cars and a secure building with controlled access. The cottage is yours alone for your stay.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+                <div class="bg-white rounded-xl p-8 border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary mb-3 font-serif">Guest reviews</h3>
+                    <p class="text-gray-600 mb-4">We publish guest feedback only with permission. Until then, you can read reviews for the whole-cottage listing on Airbnb.</p>
+                    <a href="https://www.airbnb.co.uk/rooms/1099929384131586231" target="_blank" rel="noopener noreferrer"
+                        class="inline-block bg-[#FF5A5F] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                        <i class="fab fa-airbnb mr-2"></i>Read reviews on Airbnb
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100">
+                    <h3 class="sr-only">Location map — Marlborough, Harare</h3>
+                    <iframe
+                        title="Map of Marlborough, Harare near The Cosy Place"
+                        class="w-full h-64 md:h-full min-h-[16rem]"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=30.9902%2C-17.7816%2C31.0302%2C-17.7416&amp;layer=mapnik&amp;marker=-17.7616%2C31.0102"></iframe>
+                    <p class="text-sm text-gray-500 px-4 py-3">Marlborough, Harare — near Westgate Shopping Centre. Exact address shared after booking.</p>
                 </div>
             </div>
         </div>
@@ -1072,9 +1151,12 @@
                 <div>
                     <h4 class="text-lg font-bold mb-6">Contact Info</h4>
                     <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-phone text-accent mr-3"></i>
-                            <a href="tel:+27646662761" class="text-gray-400 hover:text-white transition-colors">+27 64 666 2761</a>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-accent mr-3 mt-1"></i>
+                            <span>
+                                <a href="tel:+27646662761" class="text-gray-400 hover:text-white transition-colors">+27 64 666 2761</a>
+                                <span class="block text-xs text-gray-500">WhatsApp · South Africa-based manager</span>
+                            </span>
                         </li>
                         <li class="flex items-center">
                             <i class="fab fa-whatsapp text-accent mr-3"></i>
@@ -1105,8 +1187,8 @@
             </div>
 
             <div class="pt-8 border-t border-gray-800 text-center">
-                <p class="text-gray-400">&copy; 2024 The Cosy Place. All rights reserved. | <a href="#"
-                        class="hover:text-white transition duration-300">Privacy Policy</a> | <a href="#"
+                <p class="text-gray-400">&copy; <span id="year">2026</span> The Cosy Place. All rights reserved. | <a href="privacy/"
+                        class="hover:text-white transition duration-300">Privacy Policy</a> | <a href="terms/"
                         class="hover:text-white transition duration-300">Terms & Conditions</a></p>
                 <p class="text-gray-500 text-sm mt-2">Website developed by <span class="text-gray-400">AVATECH</span> ·
                     <a href="mailto:avatechinfosystems@gmail.com"
@@ -1645,6 +1727,7 @@
             });
         })();
     </script>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
