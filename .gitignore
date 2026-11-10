@@ -2,3 +2,4 @@
 *.tmp
 node_modules/
 assets/photos/originals-backup/
+.tools-venv/

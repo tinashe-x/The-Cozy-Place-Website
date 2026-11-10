@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="floorTitle floorDesc">
+  <title id="floorTitle">Floor plan of The Cosy Place two-bedroom cottage</title>
+  <desc id="floorDesc">Schematic layout showing lounge, kitchen, two bedrooms, two bathrooms, and porch. Not a surveyed drawing.</desc>
+  <rect width="640" height="400" fill="#fafaf7"/>
+  <g fill="none" stroke="#1f4d3a" stroke-width="3">
+    <rect x="40" y="40" width="560" height="300" rx="4"/>
+    <line x1="280" y1="40" x2="280" y2="340"/>
+    <line x1="40" y1="200" x2="280" y2="200"/>
+    <line x1="440" y1="40" x2="440" y2="340"/>
+    <line x1="440" y1="190" x2="600" y2="190"/>
+    <line x1="280" y1="270" x2="440" y2="270"/>
+  </g>
+  <g fill="#3d4a3f" font-family="Georgia, serif" font-size="16" text-anchor="middle">
+    <text x="160" y="130">Lounge</text>
+    <text x="160" y="280">Kitchen</text>
+    <text x="360" y="170">Bedroom 1</text>
+    <text x="360" y="315">Bath 1</text>
+    <text x="520" y="120">Bedroom 2</text>
+    <text x="520" y="275">Bath 2</text>
+  </g>
+  <rect x="200" y="340" width="120" height="40" fill="#5b7f6a" opacity="0.25" stroke="#5b7f6a" stroke-width="2"/>
+  <text x="260" y="365" fill="#1f4d3a" font-family="Georgia, serif" font-size="14" text-anchor="middle">Porch</text>
+</svg>

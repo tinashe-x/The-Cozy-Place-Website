@@ -36,6 +36,7 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/photos/O56A0306_113519.webp" type="image/webp" fetchpriority="high">
     <link rel="preload" as="image" href="assets/photos/O56A0306_113519.jpg" fetchpriority="high">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
@@ -82,7 +83,11 @@
         }
 
         .hero-gradient {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/photos/O56A0306_113519.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('assets/photos/O56A0306_113519.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), image-set(
+                url('assets/photos/O56A0306_113519.webp') type('image/webp'),
+                url('assets/photos/O56A0306_113519.jpg') type('image/jpeg')
+            );
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -564,8 +569,11 @@
                     <img src="assets/photos/O56A0307_113438.jpg"
                         alt="Living room at The Cosy Place with modern furniture"
                         class="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy">
-                    <img src="assets/photos/O56A0298_113803.jpg" alt="Living room seating around a coffee table"
+                    <picture>
+                                <source srcset="assets/photos/O56A0298_113803.webp" type="image/webp">
+                                <img src="assets/photos/O56A0298_113803.jpg" alt="Living room seating around a coffee table"
                         class="rounded-lg shadow-lg w-full h-64 object-cover mt-8" loading="lazy">
+                            </picture>
                     <img src="assets/photos/O56A0301_113722.jpg" alt="Modern kitchen with stainless steel appliances"
                         class="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy">
                     <img src="assets/photos/O56A0309_113327.jpg" alt="Outdoor patio with seating area"
@@ -970,15 +978,74 @@
 
             <nav id="gallery-jump" class="gallery-jump -mx-4 px-4 py-3 mb-12" aria-label="Jump to a room">
                 <div class="room-jump-track flex gap-2 overflow-x-auto">
-                    <a href="#room-kitchen" class="room-pill is-active" data-room-link aria-current="true">Kitchen</a>
+                    <a href="#room-exterior" class="room-pill is-active" data-room-link aria-current="true">Exterior</a>
+                    <a href="#room-kitchen" class="room-pill" data-room-link>Kitchen</a>
                     <a href="#room-bedroom" class="room-pill" data-room-link>Bedroom</a>
                     <a href="#room-dining" class="room-pill" data-room-link>Dining Room</a>
                     <a href="#room-living" class="room-pill" data-room-link>Living Room</a>
                     <a href="#room-bathroom" class="room-pill" data-room-link>Bathroom</a>
+                    <a href="#floor-plan" class="room-pill" data-room-link>Floor plan</a>
                 </div>
             </nav>
 
             <div class="space-y-16">
+                <div id="room-exterior" data-room class="room-block">
+                    <div class="mb-6">
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary font-serif">Exterior</h3>
+                        <p class="text-gray-600 mt-2">Private entrance, porch, lawn, and parking at the cottage in Marlborough, Harare.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <figure class="relative overflow-hidden rounded-xl group m-0">
+                            <picture>
+                                <source srcset="assets/photos/O56A0339_112115.webp" type="image/webp">
+                                <img src="assets/photos/O56A0339_112115.jpg" alt="Exterior entrance of two-bedroom self-catering cottage Marlborough Harare"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" width="1200" height="800">
+                            </picture>
+                        </figure>
+                        <figure class="relative overflow-hidden rounded-xl group m-0">
+                            <picture>
+                                <source srcset="assets/photos/O56A0335_112346.webp" type="image/webp">
+                                <img src="assets/photos/O56A0335_112346.jpg" alt="Cottage exterior and garden path Marlborough Harare"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" width="1200" height="800">
+                            </picture>
+                        </figure>
+                        <figure class="relative overflow-hidden rounded-xl group m-0">
+                            <picture>
+                                <source srcset="assets/photos/O56A0340_112038.webp" type="image/webp">
+                                <img src="assets/photos/O56A0340_112038.jpg" alt="Outside view of The Cosy Place self-catering cottage Harare"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" width="1200" height="800">
+                            </picture>
+                        </figure>
+                        <figure class="relative overflow-hidden rounded-xl group m-0">
+                            <picture>
+                                <source srcset="assets/photos/O56A0342_111928.webp" type="image/webp">
+                                <img src="assets/photos/O56A0342_111928.jpg" alt="Lawn and outdoor area at private cottage Marlborough"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" width="1200" height="800">
+                            </picture>
+                        </figure>
+                        <figure class="relative overflow-hidden rounded-xl group m-0">
+                            <picture>
+                                <source srcset="assets/photos/O56A0306_113519.webp" type="image/webp">
+                                <img src="assets/photos/O56A0306_113519.jpg" alt="Property exterior hero view Marlborough Harare accommodation"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" width="1200" height="800">
+                            </picture>
+                        </figure>
+                        <figure class="relative overflow-hidden rounded-xl group m-0">
+                            <picture>
+                                <source srcset="assets/photos/O56A0309_113327.webp" type="image/webp">
+                                <img src="assets/photos/O56A0309_113327.jpg" alt="Covered porch seating at The Cosy Place Harare"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" width="1200" height="800">
+                            </picture>
+                        </figure>
+                    </div>
+                </div>
+
                 <div id="room-kitchen" data-room class="room-block">
                     <div class="mb-6">
                         <h3 class="text-2xl md:text-3xl font-bold text-primary font-serif">Kitchen</h3>
@@ -986,14 +1053,20 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0307_113438.jpg" alt="Kitchen showing the sink, fridge, and cooking area"
+                            <picture>
+                                <source srcset="assets/photos/O56A0307_113438.webp" type="image/webp">
+                                <img src="assets/photos/O56A0307_113438.jpg" alt="Kitchen showing the sink, fridge, and cooking area"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0308_113358.jpg" alt="Kitchen sink, window, and security door"
+                            <picture>
+                                <source srcset="assets/photos/O56A0308_113358.webp" type="image/webp">
+                                <img src="assets/photos/O56A0308_113358.jpg" alt="Kitchen sink, window, and security door"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                     </div>
                 </div>
@@ -1005,34 +1078,52 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0327_112535.jpg" alt="Double bed with white linen, a dark throw, and bedside lamps"
+                            <picture>
+                                <source srcset="assets/photos/O56A0327_112535.webp" type="image/webp">
+                                <img src="assets/photos/O56A0327_112535.jpg" alt="Double bed with white linen, a dark throw, and bedside lamps"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0314_113034.jpg" alt="Double bed with a grey tufted headboard and matching bedside lamps"
+                            <picture>
+                                <source srcset="assets/photos/O56A0314_113034.webp" type="image/webp">
+                                <img src="assets/photos/O56A0314_113034.jpg" alt="Double bed with a grey tufted headboard and matching bedside lamps"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0312_113135.jpg" alt="Bedside table and reading lamp beside the window"
+                            <picture>
+                                <source srcset="assets/photos/O56A0312_113135.webp" type="image/webp">
+                                <img src="assets/photos/O56A0312_113135.jpg" alt="Bedside table and reading lamp beside the window"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0313_113105.jpg" alt="Bedside table next to the bedroom door"
+                            <picture>
+                                <source srcset="assets/photos/O56A0313_113105.webp" type="image/webp">
+                                <img src="assets/photos/O56A0313_113105.jpg" alt="Bedside table next to the bedroom door"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0318_112841.jpg" alt="Bedroom wardrobe with a mirror and drawers"
+                            <picture>
+                                <source srcset="assets/photos/O56A0318_112841.webp" type="image/webp">
+                                <img src="assets/photos/O56A0318_112841.jpg" alt="Bedroom wardrobe with a mirror and drawers"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0330_112506.jpg" alt="Bedroom looking toward the door and wardrobe"
+                            <picture>
+                                <source srcset="assets/photos/O56A0330_112506.webp" type="image/webp">
+                                <img src="assets/photos/O56A0330_112506.jpg" alt="Bedroom looking toward the door and wardrobe"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                     </div>
                 </div>
@@ -1044,14 +1135,20 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0301_113722.jpg" alt="Dining room with a glass-top wooden table and display cabinet"
+                            <picture>
+                                <source srcset="assets/photos/O56A0301_113722.webp" type="image/webp">
+                                <img src="assets/photos/O56A0301_113722.jpg" alt="Dining room with a glass-top wooden table and display cabinet"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0304_113641.jpg" alt="Dining table looking through an arch into the kitchen"
+                            <picture>
+                                <source srcset="assets/photos/O56A0304_113641.webp" type="image/webp">
+                                <img src="assets/photos/O56A0304_113641.jpg" alt="Dining table looking through an arch into the kitchen"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                     </div>
                 </div>
@@ -1063,19 +1160,28 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0297_113914.jpg" alt="Living room with leather sofas, armchairs, and a wall-mounted TV"
+                            <picture>
+                                <source srcset="assets/photos/O56A0297_113914.webp" type="image/webp">
+                                <img src="assets/photos/O56A0297_113914.jpg" alt="Living room with leather sofas, armchairs, and a wall-mounted TV"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0298_113803.jpg" alt="Living room seating arranged around a round coffee table"
+                            <picture>
+                                <source srcset="assets/photos/O56A0298_113803.webp" type="image/webp">
+                                <img src="assets/photos/O56A0298_113803.jpg" alt="Living room seating arranged around a round coffee table"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0300_113844.jpg" alt="Living room television and sofa beside the doorway"
+                            <picture>
+                                <source srcset="assets/photos/O56A0300_113844.webp" type="image/webp">
+                                <img src="assets/photos/O56A0300_113844.jpg" alt="Living room television and sofa beside the doorway"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                     </div>
                 </div>
@@ -1087,31 +1193,35 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0321_112730.jpg" alt="Bathroom with a glass shower, toilet, and barred window"
+                            <picture>
+                                <source srcset="assets/photos/O56A0321_112730.webp" type="image/webp">
+                                <img src="assets/photos/O56A0321_112730.jpg" alt="Bathroom with a glass shower, toilet, and barred window"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0325_112649.jpg" alt="Bathroom vanity with a vessel sink and mirror cabinet"
+                            <picture>
+                                <source srcset="assets/photos/O56A0325_112649.webp" type="image/webp">
+                                <img src="assets/photos/O56A0325_112649.jpg" alt="Bathroom vanity with a vessel sink and mirror cabinet"
                                 class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy">
+                            </picture>
                         </figure>
                     </div>
                 </div>
 
-                <div class="room-block">
+
+                <div id="floor-plan" data-room class="room-block">
                     <div class="mb-6">
-                        <h3 class="text-2xl md:text-3xl font-bold text-primary font-serif">Outside</h3>
-                        <p class="text-gray-600 mt-2">A look at the house from the garden.</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary font-serif">Floor plan</h3>
+                        <p class="text-gray-600 mt-2">Simple layout of the two-bedroom, two-bathroom cottage. Schematic only — not a survey drawing.</p>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <img src="assets/photos/O56A0339_112115.jpg" alt="House entrance with brick columns and a lawn"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </figure>
+                    <div class="max-w-3xl mx-auto bg-light rounded-xl border border-gray-100 p-4">
+                        <img src="assets/floor-plan.svg" alt="Floor plan of two-bedroom self-catering cottage Marlborough Harare showing lounge kitchen bedrooms bathrooms and porch" class="w-full h-auto" width="640" height="400" loading="lazy">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
