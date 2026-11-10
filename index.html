@@ -456,17 +456,18 @@
     <section id="home" class="hero-gradient text-white relative flex items-center">
         <div class="container mx-auto px-4 py-16 md:py-24 pb-24">
             <div class="max-w-3xl mx-auto text-center animate-fade-in">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif">Self-catering cottage in Marlborough, Harare</h1>
-                <p class="text-xl md:text-2xl mb-4 opacity-90">A private two-bedroom cottage with its own entrance, porch, and lawn. The whole place is yours.</p>
-                <p class="text-lg md:text-l mb-8 opacity-90">Book the whole cottage or one bedroom. Either way, you have the cottage to yourselves.</p>
+                <p class="text-sm md:text-base tracking-[0.2em] uppercase mb-4 opacity-90 font-semibold">The Cosy Place</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif">Self-catering accommodation in Marlborough, Harare</h1>
+                <p class="text-xl md:text-2xl mb-4 opacity-90">Your home away from home — comfort, privacy and convenience in the heart of Marlborough.</p>
+                <p class="text-lg mb-8 opacity-90">Private cottage with backup power, borehole water and fibre Wi-Fi. Book the whole cottage or one bedroom.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#rates"
-                        class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 transform hover:-translate-y-1">
-                        <i class="fas fa-tags mr-2"></i>View rates
+                    <a href="#booking" data-analytics="book_cta_click"
+                        class="bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-calendar-check mr-2"></i>Book your stay
                     </a>
-                    <a href="#platforms"
-                        class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition duration-300">
-                        <i class="fas fa-external-link-alt mr-2"></i>View on Platforms
+                    <a href="#rates"
+                        class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">
+                        Check availability and rates
                     </a>
                 </div>
             </div>
@@ -642,12 +643,14 @@
                 <div class="border-2 border-accent rounded-xl p-8">
                     <h3 class="text-2xl font-bold text-primary mb-3 font-serif">Whole cottage</h3>
                     <p class="text-gray-600 mb-4">Both bedrooms and both bathrooms, plus kitchen, lounge, porch, and lawn. Up to 4 guests.</p>
-                    <p class="text-3xl font-bold text-accent">From $65<span class="text-base font-medium text-gray-500"> / night</span></p>
+                    <p class="text-3xl font-bold text-accent">$70<span class="text-base font-medium text-gray-500"> / night</span></p>
+                    <p class="text-sm text-gray-500 mt-2">2–10 nights · 11+ nights: $65 / night</p>
                 </div>
                 <div class="border-2 border-gray-200 rounded-xl p-8">
                     <h3 class="text-2xl font-bold text-primary mb-3 font-serif">One bedroom</h3>
                     <p class="text-gray-600 mb-4">One bedroom and one bathroom. You still have the kitchen, lounge, porch, and lawn to yourselves. Up to 2 guests.</p>
-                    <p class="text-3xl font-bold text-accent">From $45<span class="text-base font-medium text-gray-500"> / night</span></p>
+                    <p class="text-3xl font-bold text-accent">$50<span class="text-base font-medium text-gray-500"> / night</span></p>
+                    <p class="text-sm text-gray-500 mt-2">2–10 nights · 11+ nights: $45 / night</p>
                 </div>
             </div>
 
@@ -709,10 +712,10 @@
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Direct Booking</h3>
                     <p class="text-gray-600 mb-6">Whole cottage or one bedroom, at the published USD rates. No platform fees.</p>
                     <a href="#booking"
-                        class="inline-block bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300">
+                        class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary transition duration-300">
                         <i class="fas fa-calendar-check mr-2"></i>Book Direct
                     </a>
-                    <p class="text-sm text-gray-500 mt-4">From $45 / night · Best for one-bedroom stays</p>
+                    <p class="text-sm text-gray-500 mt-4">From $50 / night · Best for one-bedroom stays</p>
                 </div>
             </div>
         </div>
@@ -1203,7 +1206,15 @@
     }
     </script>
 
-    <script src="assets/js/booking-helpers.js" defer></script>
+    <a id="whatsappFab"
+       href="https://wa.me/27646662761?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20staying%20at%20The%20Cosy%20Place."
+       class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:scale-105 transition-transform"
+       target="_blank" rel="noopener noreferrer" aria-label="Enquire on WhatsApp"
+       data-analytics="whatsapp_click">
+      <i class="fab fa-whatsapp text-3xl" aria-hidden="true"></i>
+    </a>
+
+    <script src="assets/js/booking-helpers.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
     <script>
         // Define data at the beginning
