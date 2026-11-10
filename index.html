@@ -736,7 +736,7 @@
                                     <i class="fas fa-check-circle text-accent text-xl mr-3 mt-1"></i>
                                     <div>
                                         <h4 class="font-bold text-lg">Published direct rates</h4>
-                                        <p class="opacity-90">Whole cottage from $65 · One bedroom from $45</p>
+                                        <p class="opacity-90">Whole cottage $70 · One bedroom $50 <span class="opacity-80">(11+ nights: $65 / $45)</span></p>
                                     </div>
                                 </div>
 
@@ -759,16 +759,21 @@
 
                             <div class="mt-12 pt-8 border-t border-white border-opacity-20">
                                 <h4 class="text-xl font-bold mb-4">Need Help?</h4>
-                                <p class="mb-2"><i class="fas fa-phone mr-2"></i><a href="tel:+27646662761" class="hover:underline">+27 64 666 2761</a></p>
-                                <p class="mb-2"><i class="fab fa-whatsapp mr-2"></i><a href="https://wa.me/27646662761?text=Hi%20The%20Cosy%20Place%2C%20I'd%20like%20to%20ask%20about%20availability." target="_blank" rel="noopener noreferrer" class="hover:underline">Chat on WhatsApp</a></p>
+                                <p class="mb-2"><i class="fas fa-phone mr-2"></i><a href="tel:+27646662761" class="hover:underline">+27 64 666 2761</a>
+                                    <span class="block text-sm opacity-80 mt-1">WhatsApp · South Africa-based manager</span></p>
+                                <p class="mb-2"><i class="fab fa-whatsapp mr-2"></i><a id="bookingWhatsAppLink" href="https://wa.me/27646662761?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20staying%20at%20The%20Cosy%20Place." target="_blank" rel="noopener noreferrer" class="hover:underline" data-analytics="whatsapp_click">Chat on WhatsApp</a></p>
                                 <p><i class="fas fa-envelope mr-2"></i><a href="mailto:tinashejsibanda@gmail.com" class="hover:underline">tinashejsibanda@gmail.com</a></p>
                             </div>
                         </div>
 
                         <div class="md:w-1/2 p-8 md:p-12">
+                            <p class="mb-6 rounded-lg bg-light border border-accent/20 px-4 py-3 text-primary font-semibold">
+                                <i class="fas fa-clock mr-2 text-accent" aria-hidden="true"></i>We typically respond within 2 hours.
+                            </p>
                             <form id="bookingForm" action="https://formspree.io/f/xrpbjvar" method="POST"
                                 class="space-y-6">
                                 <input type="hidden" name="_subject" value="New Direct Booking Inquiry — The Cosy Place">
+                                <input type="hidden" name="estimated_total" id="estimated_total" value="">
                                 <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off"
                                     aria-hidden="true">
 
@@ -779,15 +784,15 @@
                                 </div>
 
                                 <div>
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address
-                                        *</label>
-                                    <input type="email" id="email" name="email" required
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">WhatsApp / contact number *</label>
+                                    <input type="tel" id="phone" name="phone" required
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
                                 </div>
 
                                 <div>
-                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone"
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address
+                                        <span class="font-normal text-gray-500">(optional if WhatsApp supplied)</span></label>
+                                    <input type="email" id="email" name="email"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300">
                                 </div>
 
@@ -821,22 +826,29 @@
                                     </select>
                                 </div>
 
+                                <div id="estimateBox" class="rounded-lg border border-gray-200 bg-light p-4 hidden" aria-live="polite">
+                                    <p class="text-sm text-gray-600">Estimated total</p>
+                                    <p class="text-2xl font-bold text-primary"><span id="estimateAmount">—</span></p>
+                                    <p id="estimateDetail" class="text-sm text-gray-500 mt-1"></p>
+                                    <p class="text-xs text-gray-500 mt-2">Confirmed after we check availability. Prices in USD.</p>
+                                </div>
+
                                 <div>
                                     <label for="message" class="block text-gray-700 font-medium mb-2">Additional
-                                        Requests</label>
-                                    <textarea id="message" name="message" rows="4"
+                                        Requests <span class="font-normal text-gray-500">(optional)</span></label>
+                                    <textarea id="message" name="message" rows="3"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300"
                                         placeholder="Any special requests or questions..."></textarea>
                                 </div>
 
                                 <button type="submit" id="bookingSubmitBtn"
-                                    class="w-full bg-accent text-white py-4 rounded-lg font-semibold hover:bg-red-700 transition duration-300 transform hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none">
+                                    class="w-full bg-accent text-white py-4 rounded-lg font-semibold hover:bg-primary transition duration-300 transform hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none">
                                     <i class="fas fa-paper-plane mr-2"></i><span id="bookingSubmitLabel">Send Booking
                                         Inquiry</span>
                                 </button>
 
-                                <p class="text-sm text-gray-500 text-center">By submitting, you agree to our Terms &
-                                    Conditions and Privacy Policy</p>
+                                <p class="text-sm text-gray-500 text-center">By submitting, you agree to our <a href="terms/" class="text-accent hover:underline">Terms</a> and
+                                    <a href="privacy/" class="text-accent hover:underline">Privacy Policy</a></p>
                             </form>
 
                             <div id="formSuccess"
@@ -1352,6 +1364,45 @@
         const stayDatesInput = document.getElementById('stay_dates');
         const checkinInput = document.getElementById('checkin');
         const checkoutInput = document.getElementById('checkout');
+        const stayTypeSelect = document.getElementById('stay_type');
+        const guestsSelect = document.getElementById('guests');
+        const estimateBox = document.getElementById('estimateBox');
+        const estimateAmount = document.getElementById('estimateAmount');
+        const estimateDetail = document.getElementById('estimateDetail');
+        const estimatedTotalInput = document.getElementById('estimated_total');
+        const whatsappFab = document.getElementById('whatsappFab');
+        const bookingWhatsAppLink = document.getElementById('bookingWhatsAppLink');
+
+        function syncWhatsAppLinks() {
+            if (!window.CosyBooking) return;
+            const url = CosyBooking.buildWhatsAppUrl({
+                stayType: stayTypeSelect.value || undefined,
+                checkin: checkinInput.value || undefined,
+                checkout: checkoutInput.value || undefined,
+                guests: guestsSelect.value || undefined
+            });
+            if (whatsappFab) whatsappFab.href = url;
+            if (bookingWhatsAppLink) bookingWhatsAppLink.href = url;
+        }
+
+        function updateEstimate() {
+            if (!window.CosyBooking) return;
+            const estimate = CosyBooking.estimateStayTotal({
+                stayType: stayTypeSelect.value,
+                checkin: checkinInput.value,
+                checkout: checkoutInput.value
+            });
+            if (estimate) {
+                estimateBox.classList.remove('hidden');
+                estimateAmount.textContent = '$' + estimate.total;
+                estimateDetail.textContent = estimate.nights + ' nights × $' + estimate.nightlyRate;
+                estimatedTotalInput.value = '$' + estimate.total + ' (' + estimate.nights + ' × $' + estimate.nightlyRate + ')';
+            } else {
+                estimateBox.classList.add('hidden');
+                estimatedTotalInput.value = '';
+            }
+            syncWhatsAppLinks();
+        }
 
         const stayDatePicker = flatpickr(stayDatesInput, {
             mode: 'range',
@@ -1369,6 +1420,7 @@
                     checkinInput.value = '';
                     checkoutInput.value = '';
                 }
+                updateEstimate();
             }
         });
 
@@ -1380,13 +1432,19 @@
 
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
-            const stayType = document.getElementById('stay_type').value;
+            const phone = document.getElementById('phone').value.trim();
+            const stayType = stayTypeSelect.value;
             const checkin = checkinInput.value;
             const checkout = checkoutInput.value;
-            const guests = document.getElementById('guests').value;
+            const guests = guestsSelect.value;
 
-            if (!name || !email || !stayType || !checkin || !checkout || !guests) {
-                alert('Please fill in all required fields, including both stay dates');
+            if (!name || !phone || !stayType || !checkin || !checkout || !guests) {
+                alert('Please fill in all required fields, including WhatsApp/contact number and both stay dates');
+                return;
+            }
+
+            if (!phone && !email) {
+                alert('Please provide a WhatsApp/contact number or email');
                 return;
             }
 
@@ -1409,11 +1467,15 @@
                 });
 
                 if (response.ok) {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'booking_submit', { transport_type: 'beacon' });
+                    }
                     bookingForm.reset();
                     stayDatePicker.clear();
                     checkinInput.value = '';
                     checkoutInput.value = '';
                     guestsSelect.innerHTML = '<option value="">Select stay type first</option>';
+                    updateEstimate();
                     formSuccess.classList.remove('hidden');
                     formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     setTimeout(() => formSuccess.classList.add('hidden'), 10000);
@@ -1435,10 +1497,6 @@
                 bookingSubmitLabel.textContent = 'Send Booking Inquiry';
             }
         });
-
-        // Stay type → guest limit
-        const stayTypeSelect = document.getElementById('stay_type');
-        const guestsSelect = document.getElementById('guests');
 
         function setGuestOptions(maxGuests) {
             const previous = guestsSelect.value;
@@ -1462,7 +1520,11 @@
             } else {
                 guestsSelect.innerHTML = '<option value="">Select stay type first</option>';
             }
+            updateEstimate();
         });
+
+        guestsSelect.addEventListener('change', syncWhatsAppLinks);
+        syncWhatsAppLinks();
 
         // Add hover effect to booking platform cards
         document.querySelectorAll('#platforms .bg-white').forEach(card => {
