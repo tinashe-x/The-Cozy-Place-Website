@@ -1,8 +1,8 @@
 (function (global) {
   var WA_NUMBER = "27646662761";
   var RATES = {
-    whole: { short: 70, long: 65 },
-    one: { short: 50, long: 45 }
+    whole: { short: 59, long: 55 },
+    one: { short: 39, long: 35 }
   };
 
   function parseStayType(value) {

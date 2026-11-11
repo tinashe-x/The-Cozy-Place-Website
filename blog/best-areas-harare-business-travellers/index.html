@@ -25,7 +25,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: "#1f4d3a", secondary: "#3d4a3f", accent: "#5b7f6a", light: "#fafaf7", dark: "#1c241e" },
+                    colors: { primary: "#0f3d2a", secondary: "#3d4a3f", accent: "#5b7f6a", light: "#fafaf7", dark: "#1c241e" },
                     fontFamily: { sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'], serif: ['Fraunces', 'Georgia', 'serif'] }
                 }
             }
@@ -33,8 +33,8 @@
     </script>
 </head>
 <body class="font-sans text-gray-800 bg-light">
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <header class="site-header sticky top-0 z-50">
+        <nav class="container mx-auto px-4 flex justify-between items-center min-h-[3.25rem]">
             <a href="../../index.html" class="text-xl font-bold text-primary font-serif">The Cosy Place</a>
             <div class="hidden sm:flex gap-6 text-sm font-medium">
                 <a href="../../index.html" class="hover:text-accent">Home</a>

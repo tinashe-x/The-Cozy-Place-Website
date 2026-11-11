@@ -23,12 +23,12 @@
         content="Stay at The Cosy Place, a private self-catering cottage in Marlborough, Harare. 1 and 2-bedroom options with solar backup, borehole water and fast Wi-Fi.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thecosyplace.co.zw/">
-    <meta property="og:image" content="https://thecosyplace.co.zw/assets/photos/O56A0339_112115.jpg">
+    <meta property="og:image" content="https://thecosyplace.co.zw/assets/photos/exterior-front.jpg">
     <meta property="og:locale" content="en_ZW">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Self-Catering Accommodation in Marlborough, Harare | The Cosy Place">
     <meta name="twitter:description" content="Stay at The Cosy Place, a private self-catering cottage in Marlborough, Harare. Enquire directly in USD.">
-    <meta name="twitter:image" content="https://thecosyplace.co.zw/assets/photos/O56A0339_112115.jpg">
+    <meta name="twitter:image" content="https://thecosyplace.co.zw/assets/photos/exterior-front.jpg">
     <meta name="geo.region" content="ZW-HA">
     <meta name="geo.placename" content="Marlborough, Harare">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -40,7 +40,7 @@
     <link rel="preload" as="image" href="assets/photos/O56A0306_113519.jpg" fetchpriority="high">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/brand.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,15 +49,17 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#1f4d3a",
+                        primary: "#0f3d2a",
                         secondary: "#3d4a3f",
                         accent: "#5b7f6a",
+                        gold: "#c9a227",
                         light: "#fafaf7",
                         dark: "#1c241e"
                     },
                     fontFamily: {
                         'sans': ['"Source Sans 3"', 'system-ui', '-apple-system', 'sans-serif'],
-                        'serif': ['Fraunces', 'Georgia', 'serif']
+                        'serif': ['Fraunces', 'Georgia', 'serif'],
+                        'display': ['"Cormorant Garamond"', 'Georgia', 'serif']
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -83,23 +85,21 @@
         }
 
         .hero-gradient {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('assets/photos/O56A0306_113519.jpg');
-            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), image-set(
-                url('assets/photos/O56A0306_113519.webp') type('image/webp'),
-                url('assets/photos/O56A0306_113519.jpg') type('image/jpeg')
-            );
+            background-color: #0f3d2a;
+            background-image:
+                linear-gradient(105deg, rgba(12, 32, 24, 0.82) 0%, rgba(12, 32, 24, 0.55) 42%, rgba(12, 32, 24, 0.28) 100%),
+                image-set(
+                    url('assets/photos/O56A0306_113519.webp') type('image/webp'),
+                    url('assets/photos/O56A0306_113519.jpg') type('image/jpeg')
+                );
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: calc(100vh - 5rem);
-            min-height: calc(100svh - 5rem);
         }
 
         @media (min-width: 768px) {
             .hero-gradient {
                 background-attachment: fixed;
-                min-height: calc(100vh - 6rem);
-                min-height: calc(100svh - 6rem);
             }
         }
 
@@ -408,72 +408,59 @@
 
 <body class="font-sans text-gray-800 bg-light">
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-4 py-2">
-            <div class="flex justify-between items-center">
-                <a href="#home" class="flex items-center shrink-0 gap-2 sm:gap-3 min-w-0">
-                    <img src="assets/logo-thecosyplace.png" alt="" class="h-14 sm:h-16 md:h-20 w-auto" width="720" height="389">
-                    <div class="min-w-0">
-                        <p class="text-xl sm:text-2xl font-bold text-primary font-serif leading-tight flex items-center gap-2">
-                            <i class="fas fa-map-marker-alt text-accent" aria-hidden="true"></i>
-                            <span>The Cosy Place</span>
-                        </p>
-                        <p class="text-xs sm:text-sm text-gray-600">Marlborough, Harare</p>
-                    </div>
+    <header id="siteHeader" class="site-header site-header--overlay z-50">
+        <nav class="container mx-auto px-4">
+            <div class="flex justify-between items-center gap-3 min-h-[4rem]">
+                <a href="#home" class="flex items-center shrink-0 gap-3 min-w-0">
+                    <span class="site-logo-wrap">
+                        <picture>
+                            <source srcset="assets/logo-cosy-place.webp" type="image/webp">
+                            <img src="assets/logo-cosy-place.png" alt="The Cosy Place" class="site-logo" width="500" height="500">
+                        </picture>
+                    </span>
+                    <span class="nav-brand hidden sm:inline">The Cosy Place</span>
                 </a>
 
-                <div class="hidden lg:flex space-x-4 xl:space-x-8">
-                    <a href="#home"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Home</a>
-                    <a href="#about"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">About</a>
-                    <a href="blog/index.html"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Guides</a>
-                    <a href="#amenities"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Amenities</a>
-                    <a href="#rates"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Rates</a>
-                    <a href="#gallery"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Gallery</a>
-                    <a href="#booking"
-                        class="text-gray-700 hover:text-accent font-medium transition-colors duration-300">Book Now</a>
+                <div class="hidden lg:flex items-center space-x-5 xl:space-x-7">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="blog/index.html" class="nav-link">Guides</a>
+                    <a href="#amenities" class="nav-link">Amenities</a>
+                    <a href="#rates" class="nav-link">Rates</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#booking" class="nav-link nav-link-book">Book Now</a>
                 </div>
 
-                <button id="mobileMenuBtn" class="lg:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button id="mobileMenuBtn" class="nav-toggle lg:hidden p-1" aria-label="Open menu">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden lg:hidden mt-4 space-y-4 pb-4">
-                <a href="#home" class="block text-gray-700 hover:text-accent font-medium">Home</a>
-                <a href="#about" class="block text-gray-700 hover:text-accent font-medium">About</a>
-                <a href="blog/index.html" class="block text-gray-700 hover:text-accent font-medium">Guides</a>
-                <a href="#amenities" class="block text-gray-700 hover:text-accent font-medium">Amenities</a>
-                <a href="#rates" class="block text-gray-700 hover:text-accent font-medium">Rates</a>
-                <a href="#gallery" class="block text-gray-700 hover:text-accent font-medium">Gallery</a>
-                <a href="#booking" class="block text-gray-700 hover:text-accent font-medium">Book Now</a>
+            <div id="mobileMenu" class="hidden lg:hidden space-y-2">
+                <a href="#home" class="nav-link block text-sm">Home</a>
+                <a href="#about" class="nav-link block text-sm">About</a>
+                <a href="blog/index.html" class="nav-link block text-sm">Guides</a>
+                <a href="#amenities" class="nav-link block text-sm">Amenities</a>
+                <a href="#rates" class="nav-link block text-sm">Rates</a>
+                <a href="#gallery" class="nav-link block text-sm">Gallery</a>
+                <a href="#booking" class="nav-link nav-link-book block text-sm">Book Now</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white relative flex items-center">
-        <div class="container mx-auto px-4 py-16 md:py-24 pb-24">
-            <div class="max-w-3xl mx-auto text-center animate-fade-in">
-                <p class="text-sm md:text-base tracking-[0.2em] uppercase mb-4 opacity-90 font-semibold">The Cosy Place</p>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif">Self-catering accommodation in Marlborough, Harare</h1>
-                <p class="text-xl md:text-2xl mb-4 opacity-90">Your home away from home — comfort, privacy and convenience in the heart of Marlborough.</p>
-                <p class="text-lg mb-8 opacity-90">Private cottage with backup power, borehole water and fibre Wi-Fi. Book the whole cottage or one bedroom.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#booking" data-analytics="book_cta_click"
-                        class="bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary transition duration-300 transform hover:-translate-y-1">
-                        <i class="fas fa-calendar-check mr-2"></i>Book your stay
-                    </a>
-                    <a href="#rates"
-                        class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">
-                        Check availability and rates
-                    </a>
+    <section id="home" class="hero-gradient hero-official text-white relative">
+        <div class="container mx-auto px-4 w-full">
+            <div class="hero-official__panel">
+                <p class="hero-official__eyebrow">Marlborough, Harare</p>
+                <h1 class="hero-official__title">Your Home Away From Home In Harare</h1>
+                <hr class="hero-official__rule" aria-hidden="true">
+                <p class="hero-official__lede">Private self-catering cottage — comfort, privacy and convenience.</p>
+                <p class="hero-official__meta">Backup power · Borehole water · Fibre Wi-Fi · Whole cottage or one bedroom</p>
+                <div class="hero-official__actions">
+                    <a href="#booking" class="hero-btn-primary" data-analytics="book_cta_click">Book your stay</a>
+                    <a href="#rates" class="hero-btn-secondary">View rates</a>
                 </div>
             </div>
         </div>
@@ -680,14 +667,14 @@
                 <div class="border-2 border-accent rounded-xl p-8">
                     <h3 class="text-2xl font-bold text-primary mb-3 font-serif">Whole cottage</h3>
                     <p class="text-gray-600 mb-4">Both bedrooms and both bathrooms, plus kitchen, lounge, porch, and lawn. Up to 4 guests.</p>
-                    <p class="text-3xl font-bold text-accent">$70<span class="text-base font-medium text-gray-500"> / night</span></p>
-                    <p class="text-sm text-gray-500 mt-2">2–10 nights · 11+ nights: $65 / night</p>
+                    <p class="text-3xl font-bold text-accent">$59<span class="text-base font-medium text-gray-500"> / night</span></p>
+                    <p class="text-sm text-gray-500 mt-2">2–10 nights · 11+ nights: $55 / night</p>
                 </div>
                 <div class="border-2 border-gray-200 rounded-xl p-8">
                     <h3 class="text-2xl font-bold text-primary mb-3 font-serif">One bedroom</h3>
                     <p class="text-gray-600 mb-4">One bedroom and one bathroom. You still have the kitchen, lounge, porch, and lawn to yourselves. Up to 2 guests.</p>
-                    <p class="text-3xl font-bold text-accent">$50<span class="text-base font-medium text-gray-500"> / night</span></p>
-                    <p class="text-sm text-gray-500 mt-2">2–10 nights · 11+ nights: $45 / night</p>
+                    <p class="text-3xl font-bold text-accent">$39<span class="text-base font-medium text-gray-500"> / night</span></p>
+                    <p class="text-sm text-gray-500 mt-2">2–10 nights · 11+ nights: $35 / night</p>
                 </div>
             </div>
 
@@ -704,13 +691,13 @@
                     <tbody class="text-gray-700">
                         <tr class="border-b border-gray-100">
                             <th scope="row" class="py-4 pr-4 font-medium text-gray-800">Whole cottage (2 bedrooms)</th>
-                            <td class="py-4 px-4">$70 / night</td>
-                            <td class="py-4 pl-4">$65 / night</td>
+                            <td class="py-4 px-4">$59 / night</td>
+                            <td class="py-4 pl-4">$55 / night</td>
                         </tr>
                         <tr>
                             <th scope="row" class="py-4 pr-4 font-medium text-gray-800">One bedroom</th>
-                            <td class="py-4 px-4">$50 / night</td>
-                            <td class="py-4 pl-4">$45 / night</td>
+                            <td class="py-4 px-4">$39 / night</td>
+                            <td class="py-4 pl-4">$35 / night</td>
                         </tr>
                     </tbody>
                 </table>
@@ -752,7 +739,7 @@
                         class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary transition duration-300">
                         <i class="fas fa-calendar-check mr-2"></i>Book Direct
                     </a>
-                    <p class="text-sm text-gray-500 mt-4">From $50 / night · Best for one-bedroom stays</p>
+                    <p class="text-sm text-gray-500 mt-4">From $39 / night · Best for one-bedroom stays</p>
                 </div>
             </div>
         </div>
@@ -823,7 +810,7 @@
                                     <i class="fas fa-check-circle text-accent text-xl mr-3 mt-1"></i>
                                     <div>
                                         <h3 class="font-bold text-lg">Published direct rates</h3>
-                                        <p class="opacity-90">Whole cottage $70 · One bedroom $50 <span class="opacity-80">(11+ nights: $65 / $45)</span></p>
+                                        <p class="opacity-90">Whole cottage $59 · One bedroom $39 <span class="opacity-80">(11+ nights: $55 / $35)</span></p>
                                     </div>
                                 </div>
 
@@ -973,7 +960,8 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 font-serif">Photo Gallery</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Take a virtual tour of The Cosy Place, room by room</p>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-5">Take a virtual tour of The Cosy Place, room by room</p>
+                <a href="gallery/index.html" class="gallery-more-link mt-0">View full gallery</a>
             </div>
 
             <nav id="gallery-jump" class="gallery-jump -mx-4 px-4 py-3 mb-12" aria-label="Jump to a room">
@@ -984,7 +972,6 @@
                     <a href="#room-dining" class="room-pill" data-room-link>Dining Room</a>
                     <a href="#room-living" class="room-pill" data-room-link>Living Room</a>
                     <a href="#room-bathroom" class="room-pill" data-room-link>Bathroom</a>
-                    <a href="#floor-plan" class="room-pill" data-room-link>Floor plan</a>
                 </div>
             </nav>
 
@@ -997,50 +984,10 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
                             <picture>
-                                <source srcset="assets/photos/O56A0339_112115.webp" type="image/webp">
-                                <img src="assets/photos/O56A0339_112115.jpg" alt="Exterior entrance of two-bedroom self-catering cottage Marlborough Harare"
+                                <source srcset="assets/photos/exterior-front.webp" type="image/webp">
+                                <img src="assets/photos/exterior-front.jpg" alt="Front exterior of self-catering cottage in Marlborough Harare"
                                     class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy" width="1200" height="800">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0335_112346.webp" type="image/webp">
-                                <img src="assets/photos/O56A0335_112346.jpg" alt="Cottage exterior and garden path Marlborough Harare"
-                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy" width="1200" height="800">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0340_112038.webp" type="image/webp">
-                                <img src="assets/photos/O56A0340_112038.jpg" alt="Outside view of The Cosy Place self-catering cottage Harare"
-                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy" width="1200" height="800">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0342_111928.webp" type="image/webp">
-                                <img src="assets/photos/O56A0342_111928.jpg" alt="Lawn and outdoor area at private cottage Marlborough"
-                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy" width="1200" height="800">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0306_113519.webp" type="image/webp">
-                                <img src="assets/photos/O56A0306_113519.jpg" alt="Property exterior hero view Marlborough Harare accommodation"
-                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy" width="1200" height="800">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0309_113327.webp" type="image/webp">
-                                <img src="assets/photos/O56A0309_113327.jpg" alt="Covered porch seating at The Cosy Place Harare"
-                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy" width="1200" height="800">
+                                    loading="lazy" width="1280" height="720">
                             </picture>
                         </figure>
                     </div>
@@ -1093,38 +1040,12 @@
                                 loading="lazy">
                             </picture>
                         </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0312_113135.webp" type="image/webp">
-                                <img src="assets/photos/O56A0312_113135.jpg" alt="Bedside table and reading lamp beside the window"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0313_113105.webp" type="image/webp">
-                                <img src="assets/photos/O56A0313_113105.jpg" alt="Bedside table next to the bedroom door"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0318_112841.webp" type="image/webp">
-                                <img src="assets/photos/O56A0318_112841.jpg" alt="Bedroom wardrobe with a mirror and drawers"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                            </picture>
-                        </figure>
-                        <figure class="relative overflow-hidden rounded-xl group m-0">
-                            <picture>
-                                <source srcset="assets/photos/O56A0330_112506.webp" type="image/webp">
-                                <img src="assets/photos/O56A0330_112506.jpg" alt="Bedroom looking toward the door and wardrobe"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                            </picture>
-                        </figure>
+                        <a href="gallery/index.html#bedroom" class="gallery-more-tile" aria-label="View more bedroom photos in the gallery">
+                            <span class="gallery-more-tile__arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                            <span class="gallery-more-tile__label">More photos</span>
+                        </a>
                     </div>
                 </div>
 
@@ -1189,36 +1110,31 @@
                 <div id="room-bathroom" data-room class="room-block">
                     <div class="mb-6">
                         <h3 class="text-2xl md:text-3xl font-bold text-primary font-serif">Bathroom</h3>
-                        <p class="text-gray-600 mt-2">A walk-in shower, vessel basin, and grey tile.</p>
+                        <p class="text-gray-600 mt-2">Modern grey tile, walk-in shower, vessel basin and chrome fittings.</p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <figure class="relative overflow-hidden rounded-xl group m-0">
                             <picture>
-                                <source srcset="assets/photos/O56A0321_112730.webp" type="image/webp">
-                                <img src="assets/photos/O56A0321_112730.jpg" alt="Bathroom with a glass shower, toilet, and barred window"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
+                                <source srcset="assets/photos/bathroom-01.webp" type="image/webp">
+                                <img src="assets/photos/bathroom-01.jpg" alt="Modern bathroom with grey marble tiles shower and pedestal sink Marlborough Harare"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500 object-center"
+                                    loading="lazy" width="900" height="1200">
                             </picture>
                         </figure>
                         <figure class="relative overflow-hidden rounded-xl group m-0">
                             <picture>
-                                <source srcset="assets/photos/O56A0325_112649.webp" type="image/webp">
-                                <img src="assets/photos/O56A0325_112649.jpg" alt="Bathroom vanity with a vessel sink and mirror cabinet"
-                                class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
+                                <source srcset="assets/photos/bathroom-02.webp" type="image/webp">
+                                <img src="assets/photos/bathroom-02.jpg" alt="Bathroom vessel sink and mirror cabinet at The Cosy Place"
+                                    class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500 object-center"
+                                    loading="lazy" width="900" height="1200">
                             </picture>
                         </figure>
-                    </div>
-                </div>
-
-
-                <div id="floor-plan" data-room class="room-block">
-                    <div class="mb-6">
-                        <h3 class="text-2xl md:text-3xl font-bold text-primary font-serif">Floor plan</h3>
-                        <p class="text-gray-600 mt-2">Simple layout of the two-bedroom, two-bathroom cottage. Schematic only — not a survey drawing.</p>
-                    </div>
-                    <div class="max-w-3xl mx-auto bg-light rounded-xl border border-gray-100 p-4">
-                        <img src="assets/floor-plan.svg" alt="Floor plan of two-bedroom self-catering cottage Marlborough Harare showing lounge kitchen bedrooms bathrooms and porch" class="w-full h-auto" width="640" height="400" loading="lazy">
+                        <a href="gallery/index.html#bathroom" class="gallery-more-tile" aria-label="View more bathroom photos in the gallery">
+                            <span class="gallery-more-tile__arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                            <span class="gallery-more-tile__label">More photos</span>
+                        </a>
                     </div>
                 </div>
 
@@ -1232,7 +1148,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <a href="#home" class="inline-block mb-4">
-                        <img src="assets/logo-thecosyplace.png" alt="The Cosy Place" class="h-24 w-auto bg-white rounded-xl" width="720" height="389">
+                        <img src="assets/logo-cosy-place.png" alt="The Cosy Place" class="h-20 w-auto" width="500" height="500">
                     </a>
                     <p class="text-sm text-gray-400 mb-4">Marlborough, Harare</p>
                     <p class="text-gray-400">A private two-bedroom self-catering cottage in Marlborough, Harare, with its own
@@ -1355,11 +1271,11 @@
                 "identifier": "thecosyplace-cottage",
                 "additionalType": "Cottage",
                 "name": "The Cosy Place",
-                "description": "A private self-catering cottage in Marlborough, Harare. Book the whole cottage (up to 4 guests) from $65 per night, or one bedroom (up to 2 guests) from $45 per night. Kitchen, solar backup, borehole water, and parking.",
+                "description": "A private self-catering cottage in Marlborough, Harare. Book the whole cottage (up to 4 guests) from $55 per night, or one bedroom (up to 2 guests) from $35 per night. Kitchen, solar backup, borehole water, and parking.",
                 "url": "https://thecosyplace.co.zw/",
                 "telephone": "+27-64-666-2761",
                 "email": "tinashejsibanda@gmail.com",
-                "priceRange": "$45-$70",
+                "priceRange": "$35-$59",
                 "currenciesAccepted": "USD",
                 "image": [
                     "https://thecosyplace.co.zw/assets/photos/O56A0327_112535.jpg",
@@ -1369,7 +1285,7 @@
                     "https://thecosyplace.co.zw/assets/photos/O56A0297_113914.jpg",
                     "https://thecosyplace.co.zw/assets/photos/O56A0301_113722.jpg",
                     "https://thecosyplace.co.zw/assets/photos/O56A0307_113438.jpg",
-                    "https://thecosyplace.co.zw/assets/photos/O56A0339_112115.jpg"
+                    "https://thecosyplace.co.zw/assets/photos/exterior-front.jpg"
                 ],
                 "geo": {
                     "@type": "GeoCoordinates",
@@ -1460,13 +1376,24 @@
             { "id": 8, "name": "Secure Building", "icon": "fas fa-shield-alt" }
         ];
 
+        // Transparent overlay nav: solidify after leaving hero
+        const siteHeader = document.getElementById('siteHeader');
+        function syncHeaderScroll() {
+            if (!siteHeader) return;
+            const hero = document.getElementById('home');
+            const threshold = hero ? Math.max(48, hero.offsetHeight * 0.12) : 48;
+            siteHeader.classList.toggle('is-scrolled', window.scrollY > threshold);
+        }
+        syncHeaderScroll();
+        window.addEventListener('scroll', syncHeaderScroll, { passive: true });
+
         // Mobile menu toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', function () {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
             this.innerHTML = menu.classList.contains('hidden') ?
-                '<i class="fas fa-bars text-2xl"></i>' :
-                '<i class="fas fa-times text-2xl"></i>';
+                '<i class="fas fa-bars text-xl"></i>' :
+                '<i class="fas fa-times text-xl"></i>';
         });
 
         const galleryJump = document.getElementById('gallery-jump');
