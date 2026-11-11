@@ -43,6 +43,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/brand.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -773,22 +774,30 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
-                <div class="bg-white rounded-xl p-8 border border-gray-100">
+                <div class="bg-white rounded-xl p-8 border border-gray-100 h-full">
                     <h3 class="text-xl font-bold text-primary mb-3 font-serif">Guest reviews</h3>
-                    <p class="text-gray-600 mb-4">We publish guest feedback only with permission. Until then, you can read reviews for the whole-cottage listing on Airbnb.</p>
-                    <a href="https://www.airbnb.co.uk/rooms/1099929384131586231" target="_blank" rel="noopener noreferrer"
-                        class="inline-block bg-[#FF5A5F] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                        <i class="fab fa-airbnb mr-2"></i>Read reviews on Airbnb
+                    <p class="text-gray-600 mb-6">What guests say about staying at The Cosy Place.</p>
+                    <a id="googleReviewsLink"
+                        href="https://www.google.com/maps/search/?api=1&amp;query=The+Cosy+Place+Marlborough+Harare"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-white text-primary border border-primary px-5 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition">
+                        <i class="fab fa-google mr-2" aria-hidden="true"></i>Google reviews
                     </a>
+                    <blockquote class="mt-6 border-l-4 border-gold pl-4">
+                        <div class="flex items-center gap-1 text-gold mb-2" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-gray-700 italic leading-relaxed">“A fabulous and peaceful place. Had a great stay while in Harare on a work assignment recently. It’s really cosy.”</p>
+                        <footer class="mt-3 text-sm font-semibold text-primary">— Tawanda</footer>
+                    </blockquote>
                 </div>
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-100">
                     <h3 class="sr-only">Location map — Marlborough, Harare</h3>
-                    <iframe
-                        title="Map of Marlborough, Harare near The Cosy Place"
-                        class="w-full h-64 md:h-full min-h-[16rem]"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=30.9902%2C-17.7816%2C31.0302%2C-17.7416&amp;layer=mapnik&amp;marker=-17.7616%2C31.0102"></iframe>
+                    <div id="locationMap" class="w-full h-64 md:h-80 bg-light" role="img" aria-label="Map showing Marlborough, Harare near The Cosy Place"></div>
                     <p class="text-sm text-gray-500 px-4 py-3">Marlborough, Harare — near Westgate Shopping Centre. Exact address shared after booking.</p>
                 </div>
             </div>
@@ -1345,6 +1354,7 @@
 
     <script src="assets/js/booking-helpers.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script>
         // Define data at the beginning
         const bookingPlatforms = [
@@ -1683,7 +1693,7 @@
         document.querySelectorAll('section').forEach(section => {
             // Keep the gallery visible immediately — sticky room jumps and photos
             // must not depend on intersection timing.
-            if (section.id === 'gallery') {
+            if (section.id === 'gallery' || section.id === 'why-guests') {
                 section.style.opacity = '1';
                 return;
             }
@@ -1692,6 +1702,37 @@
             section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(section);
         });
+
+        // Free map: Leaflet + OpenStreetMap tiles (no API key)
+        (function initLocationMap() {
+            const mapEl = document.getElementById('locationMap');
+            if (!mapEl || typeof L === 'undefined') return;
+
+            const lat = -17.76160;
+            const lng = 31.01020;
+            const map = L.map(mapEl, {
+                scrollWheelZoom: false,
+                attributionControl: true
+            }).setView([lat, lng], 14);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup('<strong>The Cosy Place</strong><br>Marlborough, Harare');
+
+            function refreshMap() {
+                map.invalidateSize();
+            }
+
+            setTimeout(refreshMap, 200);
+            window.addEventListener('resize', refreshMap);
+            document.addEventListener('visibilitychange', function () {
+                if (!document.hidden) refreshMap();
+            });
+        })();
 
         // Gallery lightbox
         (function initLightbox() {
